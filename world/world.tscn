@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dweju044mtrvp"]
+[gd_scene load_steps=4 format=3 uid="uid://dweju044mtrvp"]
 
 [ext_resource type="PackedScene" uid="uid://cibudicojo330" path="res://player/player.tscn" id="1_ycg5s"]
 [ext_resource type="PackedScene" uid="uid://cr7uhyth0eipe" path="res://tilemap/tile_map.tscn" id="2_k63ot"]
+[ext_resource type="PackedScene" uid="uid://b3oms1mtvln6c" path="res://quote/quote.tscn" id="3_hkc3s"]
 
 [node name="World" type="Node2D"]
 
 [node name="TileMap" parent="." instance=ExtResource("2_k63ot")]
 
 [node name="Player" parent="." instance=ExtResource("1_ycg5s")]
+
+[node name="Quote" parent="Player" instance=ExtResource("3_hkc3s")]
+position = Vector2(-57, -46)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
