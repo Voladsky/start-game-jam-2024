@@ -1,5 +1,23 @@
-[gd_scene format=3 uid="uid://cqopna5wms1rq"]
+[gd_scene load_steps=4 format=3 uid="uid://cqopna5wms1rq"]
 
-[node name="FieldTile" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://0esswjgf5fmx" path="res://assets/sprites/Tilesets/Fields.png" id="1_dloa8"]
+[ext_resource type="Texture2D" uid="uid://c4xmbrtj63vxe" path="res://assets/sprites/Objects/Basic Plants.png" id="2_l8117"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58mw5"]
+size = Vector2(16, 16)
+
+[node name="FieldTile" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_58mw5")
+
+[node name="Field" type="Sprite2D" parent="."]
+texture = ExtResource("1_dloa8")
+hframes = 2
+vframes = 2
+
+[node name="Plant" type="Sprite2D" parent="."]
+texture = ExtResource("2_l8117")
+hframes = 6
+vframes = 2
+frame = 4

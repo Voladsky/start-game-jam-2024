@@ -1,6 +1,9 @@
-[gd_resource type="TileSet" load_steps=2 format=3 uid="uid://uv56e2m2n2id"]
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://uv56e2m2n2id"]
+
+[ext_resource type="PackedScene" uid="uid://cqopna5wms1rq" path="res://tilemap/field_tile.tscn" id="1_c6fil"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_63yyk"]
+scenes/1/scene = ExtResource("1_c6fil")
 
 [resource]
 sources/0 = SubResource("TileSetScenesCollectionSource_63yyk")
