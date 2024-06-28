@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dweju044mtrvp"]
+
+[ext_resource type="PackedScene" uid="uid://cibudicojo330" path="res://player/player.tscn" id="1_ycg5s"]
+
+[node name="World" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_ycg5s")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
