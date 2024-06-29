@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqopna5wms1rq"]
+[gd_scene load_steps=7 format=3 uid="uid://cqopna5wms1rq"]
 
-[ext_resource type="Texture2D" uid="uid://0esswjgf5fmx" path="res://assets/sprites/Tilesets/Fields.png" id="1_dloa8"]
 [ext_resource type="Script" path="res://tilemap/field_tile.gd" id="1_fx8tt"]
 [ext_resource type="Texture2D" uid="uid://dt34vdnajx2ga" path="res://assets/sprites/Tilesets/Frame.png" id="2_6wf7r"]
+[ext_resource type="Texture2D" uid="uid://d0m1asv67g1ke" path="res://assets/sprites/Tilesets/Ground.png" id="2_ctxa0"]
 [ext_resource type="Texture2D" uid="uid://c4xmbrtj63vxe" path="res://assets/sprites/Objects/Basic Plants.png" id="2_l8117"]
+[ext_resource type="Texture2D" uid="uid://d3xk5ygx7le0l" path="res://assets/sprites/Objects/tomato_item.png" id="5_33ukk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58mw5"]
-size = Vector2(16, 16)
+size = Vector2(64, 64)
 
 [node name="FieldTile" type="Area2D"]
 script = ExtResource("1_fx8tt")
@@ -15,21 +16,28 @@ script = ExtResource("1_fx8tt")
 shape = SubResource("RectangleShape2D_58mw5")
 
 [node name="Field" type="Sprite2D" parent="."]
-texture = ExtResource("1_dloa8")
-hframes = 2
-vframes = 2
+texture = ExtResource("2_ctxa0")
 
 [node name="Frame" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(0, 1, 0.4, 1)
+position = Vector2(-1.90735e-06, -1.90735e-06)
+scale = Vector2(4, 4)
 texture = ExtResource("2_6wf7r")
 
 [node name="Plant" type="Sprite2D" parent="."]
 visible = false
+position = Vector2(-9.53674e-07, -1.19209e-06)
+scale = Vector2(4, 4)
 texture = ExtResource("2_l8117")
 hframes = 6
 vframes = 2
 frame = 1
+
+[node name="Water" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(1.875, 1.9375)
+texture = ExtResource("5_33ukk")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

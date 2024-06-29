@@ -1,7 +1,7 @@
 extends Area2D
 
-var cattail_cost = 5
-var spiderplant_cost = 5
+@export var cattail_cost = 5
+@export var spiderplant_cost = 10
 
 @onready var cattail_cost_label = $UI/UI/Cattail/Cost
 @onready var spiderplant_cost_label = $UI/UI/SpiderPlant/Cost

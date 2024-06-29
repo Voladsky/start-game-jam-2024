@@ -2,6 +2,7 @@ extends CanvasLayer
 
 func _ready():
 	GameManager.amount_changed.connect(change_text)
+	change_text()
 
 
 func change_text():

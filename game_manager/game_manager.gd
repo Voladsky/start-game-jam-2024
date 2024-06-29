@@ -48,7 +48,7 @@ func change_potato_amount(amount):
 
 
 func change_water_amount(amount):
-	if water_amount + amount >= 0 and water_amount + amount < max_water_amount:
+	if water_amount + amount >= 0 and water_amount + amount <= max_water_amount:
 		water_amount += amount
 		amount_changed.emit()
 		return true

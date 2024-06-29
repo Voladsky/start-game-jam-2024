@@ -27,8 +27,8 @@ offset_left = -117.0
 offset_right = 117.0
 offset_bottom = 23.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 8
-text = "Potatoes: 12  Cattails: 0 Spiderplants: 0 Quote: 30"
+theme_override_font_sizes/font_size = 35
+text = "Potatoes: 10  Cattails: 0 Spiderplants: 0 Quote: 30"
 horizontal_alignment = 1
 script = ExtResource("1_cmf0y")
 
@@ -49,4 +49,5 @@ stretch_mode = 2
 
 [node name="Water" type="Label" parent="Resources/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 45
 text = "20/20"

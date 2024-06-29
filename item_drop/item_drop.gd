@@ -16,11 +16,13 @@ func _physics_process(_delta):
 		queue_free()
 
 func _on_body_entered(body):
-	await get_tree().create_timer(0.3).timeout
-	target = body
-	chase = true
-	vanish_distance = 8
+	if body.is_in_group("player"):
+		await get_tree().create_timer(0.3).timeout
+		target = body
+		chase = true
+		vanish_distance = 8
 
-func _on_body_exited(_body):
-	chase = false
+func _on_body_exited(body):
+	if body.is_in_group("player"):
+		chase = false
 
