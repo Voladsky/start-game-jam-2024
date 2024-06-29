@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cejm4m7hq382t"]
+
+[ext_resource type="Script" path="res://water/water.gd" id="1_ilnwa"]
+
+[node name="Water" type="Node2D"]
+script = ExtResource("1_ilnwa")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

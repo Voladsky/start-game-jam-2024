@@ -1,16 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://dweju044mtrvp"]
+[gd_scene load_steps=7 format=3 uid="uid://dweju044mtrvp"]
 
 [ext_resource type="PackedScene" uid="uid://cibudicojo330" path="res://player/player.tscn" id="1_ycg5s"]
 [ext_resource type="PackedScene" uid="uid://cr7uhyth0eipe" path="res://tilemap/tile_map.tscn" id="2_k63ot"]
 [ext_resource type="PackedScene" uid="uid://b3oms1mtvln6c" path="res://quote/quote.tscn" id="3_hkc3s"]
+[ext_resource type="PackedScene" uid="uid://bj5vcfdw0w6pp" path="res://plant_generator/plant_generator.tscn" id="3_ialrv"]
+[ext_resource type="Script" path="res://UI/resource_bar/resource_bar.gd" id="4_2a8kd"]
+[ext_resource type="PackedScene" uid="uid://cejm4m7hq382t" path="res://water/water.tscn" id="6_8pm6o"]
 
 [node name="World" type="Node2D"]
 
 [node name="TileMap" parent="." instance=ExtResource("2_k63ot")]
 
-[node name="Player" parent="." instance=ExtResource("1_ycg5s")]
-
-[node name="Quote" parent="Player" instance=ExtResource("3_hkc3s")]
+[node name="Quote" parent="." instance=ExtResource("3_hkc3s")]
 position = Vector2(-57, -46)
 
+[node name="PlantGenerator" parent="." instance=ExtResource("3_ialrv")]
+
+[node name="Player" parent="." instance=ExtResource("1_ycg5s")]
+
+[node name="ResourceBar" type="Label" parent="Player"]
+offset_left = -124.0
+offset_top = -36.0
+offset_right = 110.0
+offset_bottom = -13.0
+theme_override_font_sizes/font_size = 8
+script = ExtResource("4_2a8kd")
+
 [node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Water" parent="Player" instance=ExtResource("6_8pm6o")]
