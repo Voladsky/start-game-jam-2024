@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dweju044mtrvp"]
+[gd_scene load_steps=5 format=3 uid="uid://dweju044mtrvp"]
 
 [ext_resource type="PackedScene" uid="uid://cibudicojo330" path="res://player/player.tscn" id="1_ycg5s"]
 [ext_resource type="PackedScene" uid="uid://cr7uhyth0eipe" path="res://tilemap/tile_map.tscn" id="2_k63ot"]
 [ext_resource type="PackedScene" uid="uid://b3oms1mtvln6c" path="res://quote/quote.tscn" id="3_hkc3s"]
+[ext_resource type="PackedScene" uid="uid://gp6ovb5fnsfk" path="res://water/water.tscn" id="4_3qyf5"]
 
 [node name="World" type="Node2D"]
 
@@ -14,3 +15,5 @@
 position = Vector2(-57, -46)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Water" parent="Player" instance=ExtResource("4_3qyf5")]
