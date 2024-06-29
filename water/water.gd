@@ -15,7 +15,7 @@ func spend_water():
 		current_water_amount = 0
 
 
-func _process(delta):
+func _process(_delta):
 	$Label.text = "Water: %s/%s" % [current_water_amount, total_water_amount]
 
 
