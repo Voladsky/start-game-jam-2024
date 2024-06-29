@@ -21,8 +21,7 @@ func _input_event(_viewport, _event, _shape_idx):
 						get_tree().root.add_child(item_instance)
 						item_instance.position = position + Vector2(randf_range(-4, 4), randf_range(-4, 4))
 			else:
-				if GameManager.potato_amount >= 1:
-					GameManager.potato_amount -= 1
+				if GameManager.change_potato_amount(-1):
 					$Plant.visible = true
 			
 					for i in range(3):

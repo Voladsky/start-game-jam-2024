@@ -11,7 +11,7 @@ func _process(_delta):
 	if(direction.length() > 0):
 		animation.play("Player_Walk")
 		animation.speed_scale = 4
-		if(direction.x < 0):
+		if(direction.x <= 0):
 			GFX.scale.x = 1
 		else:
 			GFX.scale.x = -1
@@ -23,4 +23,3 @@ func _physics_process(_delta):
 	velocity = direction * speed
 	
 	move_and_slide()
-	

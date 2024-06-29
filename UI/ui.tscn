@@ -1,3 +1,52 @@
-[gd_scene format=3 uid="uid://t8a2ja5weun"]
+[gd_scene load_steps=5 format=3 uid="uid://t8a2ja5weun"]
+
+[ext_resource type="Theme" uid="uid://2hgjbonddwlt" path="res://UI/ui_theme/MinimalUI.tres" id="1_agjqw"]
+[ext_resource type="Script" path="res://UI/resource_bar/resource_bar.gd" id="1_cmf0y"]
+[ext_resource type="Script" path="res://UI/ui.gd" id="1_p3d7a"]
+[ext_resource type="Texture2D" uid="uid://uyua7eopouah" path="res://assets/sprites/Objects/watering_can.png" id="4_0r7hg"]
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_p3d7a")
+
+[node name="Resources" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("1_agjqw")
+
+[node name="ResourceBar" type="Label" parent="Resources"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -117.0
+offset_right = 117.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 8
+text = "Potatoes: 12  Cattails: 0 Spiderplants: 0 Quote: 30"
+horizontal_alignment = 1
+script = ExtResource("1_cmf0y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Resources"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="Resources/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_0r7hg")
+stretch_mode = 2
+
+[node name="Water" type="Label" parent="Resources/VBoxContainer"]
+layout_mode = 2
+text = "20/20"
