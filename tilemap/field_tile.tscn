@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://0esswjgf5fmx" path="res://assets/sprites/Tilesets/Fields.png" id="1_dloa8"]
 [ext_resource type="Script" path="res://tilemap/field_tile.gd" id="1_fx8tt"]
-[ext_resource type="Texture2D" path="res://assets/sprites/Tilesets/Frame.png" id="2_6wf7r"]
+[ext_resource type="Texture2D" uid="uid://dt34vdnajx2ga" path="res://assets/sprites/Tilesets/Frame.png" id="2_6wf7r"]
 [ext_resource type="Texture2D" uid="uid://c4xmbrtj63vxe" path="res://assets/sprites/Objects/Basic Plants.png" id="2_l8117"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58mw5"]
@@ -21,7 +21,7 @@ vframes = 2
 
 [node name="Frame" type="Sprite2D" parent="."]
 visible = false
-modulate = Color(1, 0, 0, 1)
+modulate = Color(0, 1, 0.4, 1)
 texture = ExtResource("2_6wf7r")
 
 [node name="Plant" type="Sprite2D" parent="."]

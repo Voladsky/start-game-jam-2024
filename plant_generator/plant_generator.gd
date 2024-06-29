@@ -11,11 +11,11 @@ func _unhandled_key_input(event):
 			buy_spiderplant()
 
 func buy_cattail():
-	if plant_amount.potato_amount >= cattail_cost:
-		plant_amount.cattail_amount += 1
-		plant_amount.potato_amount -= cattail_cost
+	if GameManager.plant_amount.potato_amount >= cattail_cost:
+		GameManager.plant_amount.cattail_amount += 1
+		GameManager.plant_amount.potato_amount -= cattail_cost
 
 func buy_spiderplant():
-	if plant_amount.potato_amount >= spiderplant_cost:
-		plant_amount.spiderplant_amount += 1
-		plant_amount.potato_amount -= spiderplant_cost
+	if GameManager.plant_amount.potato_amount >= spiderplant_cost:
+		GameManager.plant_amount.spiderplant_amount += 1
+		GameManager.plant_amount.potato_amount -= spiderplant_cost

@@ -16,16 +16,19 @@ func _input_event(_viewport, _event, _shape_idx):
 					$Plant.visible = false
 					$Plant.frame = 1
 					
-					var item_instance = item_drop.instantiate()
-					get_tree().root.add_child(item_instance)
-					item_instance.position = position
+					for i in range(randi_range(1, 3)):
+						var item_instance = item_drop.instantiate()
+						get_tree().root.add_child(item_instance)
+						item_instance.position = position + Vector2(randf_range(-4, 4), randf_range(-4, 4))
 			else:
-				$Plant.visible = true
+				if GameManager.potato_amount >= 1:
+					GameManager.potato_amount -= 1
+					$Plant.visible = true
 			
-				for i in range(3):
-					await get_tree().create_timer(2).timeout
+					for i in range(3):
+						await get_tree().create_timer(2).timeout
 					
-					$Plant.frame += 1
+						$Plant.frame += 1
 
 
 func _on_mouse_entered():

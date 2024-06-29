@@ -1,18 +1,17 @@
 extends Node2D
 
-var quote_potato_amount = 30
 
 func compare_to_quote():
-	return quote_potato_amount <= plant_amount.potato_amount
+	return GameManager.quote_potato_amount <= GameManager.potato_amount
 
 func collect_potato():
-	plant_amount.potato_amount += 1
+	GameManager.potato_amount += 1
 	
 func take_quote():
 	if !compare_to_quote():
 		get_tree().quit()
-	plant_amount.potato_amount -= quote_potato_amount
-	quote_potato_amount *= 2
+	GameManager.potato_amount -= GameManager.quote_potato_amount
+	GameManager.quote_potato_amount *= 2
 
 func _unhandled_key_input(event):
 	if event is InputEventKey:

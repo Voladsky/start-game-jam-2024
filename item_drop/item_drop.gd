@@ -15,6 +15,7 @@ func _physics_process(_delta):
 	position += position.direction_to(target.position) * speed
 	speed += 0.1
 	if position.distance_to(target.position) < vanish_distance:
+		GameManager.potato_amount += 1
 		queue_free()
 
 func _on_body_entered(body):
