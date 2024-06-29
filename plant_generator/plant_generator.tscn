@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj5vcfdw0w6pp"]
+
+[ext_resource type="Script" path="res://plant_generator/plant_generator.gd" id="1_811cq"]
+
+[node name="PlantGenerator" type="Node2D"]
+script = ExtResource("1_811cq")
