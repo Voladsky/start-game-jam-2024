@@ -1,10 +1,385 @@
-[gd_scene load_steps=4 format=3 uid="uid://cibudicojo330"]
+[gd_scene load_steps=16 format=3 uid="uid://cibudicojo330"]
 
-[ext_resource type="Texture2D" uid="uid://b88fy2eh2cpfg" path="res://assets/sprites/Characters/Basic Charakter Spritesheet.png" id="1_fkbhf"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_vkip4"]
+[ext_resource type="Texture2D" uid="uid://ccvsvrgeu2skj" path="res://assets/sprites/Characters/GasMaskGuy/Body.png" id="2_6a4u0"]
+[ext_resource type="Texture2D" uid="uid://dxd4v7mg57ms4" path="res://assets/sprites/Characters/GasMaskGuy/BackPack.png" id="2_u5g0j"]
+[ext_resource type="Texture2D" uid="uid://cgdjsqoxye8a7" path="res://assets/sprites/Characters/GasMaskGuy/HeadBG.png" id="3_f71vs"]
+[ext_resource type="Texture2D" uid="uid://dy7j55nqdpl24" path="res://assets/sprites/Characters/GasMaskGuy/EyeRight.png" id="4_kspiy"]
+[ext_resource type="Texture2D" uid="uid://bqmab5vluq47m" path="res://assets/sprites/Characters/GasMaskGuy/EyeLeft.png" id="5_y4u14"]
+[ext_resource type="Texture2D" uid="uid://isnp88ix3u4g" path="res://assets/sprites/Characters/GasMaskGuy/HandLeft.png" id="6_8t4na"]
+[ext_resource type="Texture2D" uid="uid://tew62sq38dvh" path="res://assets/sprites/Characters/GasMaskGuy/HandRight.png" id="7_8vulm"]
+[ext_resource type="Texture2D" uid="uid://beu6eo5j5adkj" path="res://assets/sprites/Characters/GasMaskGuy/LegRight.png" id="8_rwsb2"]
+[ext_resource type="Texture2D" uid="uid://bl4x6vksjoxlw" path="res://assets/sprites/Characters/GasMaskGuy/LegLeft.png" id="9_5cnye"]
+[ext_resource type="Texture2D" uid="uid://ceqcntqjgqwft" path="res://assets/sprites/Characters/GasMaskGuy/Mouth.png" id="11_kb26p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_msb8d"]
 size = Vector2(12, 15)
+
+[sub_resource type="Animation" id="Animation_obokn"]
+resource_name = "Player_Idle"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GFX/Mouth:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.025, -0.25, 0, 0.25, 0, 0.02, -0.25, 0, 0.25, 0, 0.025, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3, 5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GFX/Mouth:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.025, -0.25, 0, 0.25, 0, 0.02, -0.25, 0, 0.25, 0, 0.025, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3, 5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GFX/Mouth:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.665, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3, 5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GFX/Mouth:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.61, -0.25, 0, 0.25, 0, 0.44, -0.25, 0, 0.25, 0, 0.61, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3, 5)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GFX/Body:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3, 3.00286, 5)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("GFX/Body:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.61, -0.25, 0, 0.25, 0, 0.515, -0.25, 0, 0.25, 0, 0.61, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3, 5)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("GFX/Body:scale:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.025, -0.25, 0, 0.25, 0, 0.027, -0.25, 0, 0.25, 0, 0.025, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3, 5)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("GFX/Body:scale:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.025, -0.25, 0, 0.25, 0, 0.027, -0.25, 0, 0.25, 0, 0.025, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3, 5)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("GFX/EyeRight:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.3, 1.8, 1.9, 2.2, 4, 5)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("GFX/EyeRight:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.61, -0.25, 0, 0.25, 0, 0.505, -0.25, 0, 0.25, 0, 0.61, -0.25, 0, 0.25, 0, -3.1, -0.25, 0, 0.25, 0, 0.61, -0.25, 0, 0.25, 0, 0.505, -0.25, 0, 0.25, 0, 0.61, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.3, 1.8, 1.9, 2.2, 4, 5)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("GFX/EyeRight:scale:x")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.025, -0.25, 0, 0.25, 0, 0.025, -0.25, 0, 0.25, 0, 0.025, -0.25, 0, 0.25, 0, 0.025, -0.25, 0, 0.25, 0, 0.025, -0.25, 0, 0.25, 0, 0.025, -0.25, 0, 0.25, 0, 0.025, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.3, 1.8, 1.9, 2.2, 4, 5)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("GFX/EyeRight:scale:y")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.025, -0.25, 0, 0.25, 0, 0.024, -0.25, 0, 0.25, 0, 0.025, -0.25, 0, 0.25, 0, 0.001, -0.25, 0, 0.25, 0, 0.025, -0.25, 0, 0.25, 0, 0.024, -0.25, 0, 0.25, 0, 0.025, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.3, 1.8, 1.9, 2.2, 4, 5)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("GFX/EyeLeft:position:x")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.3, 1.8, 1.9, 2.2, 4, 5)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("GFX/EyeLeft:position:y")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.61, -0.25, 0, 0.25, 0, 0.475, -0.25, 0, 0.25, 0, 0.61, -0.25, 0, 0.25, 0, -3.085, -0.25, 0, 0.25, 0, 0.61, -0.25, 0, 0.25, 0, 0.475, -0.25, 0, 0.25, 0, 0.61, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.3, 1.8, 1.9, 2.2, 4, 5)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("GFX/EyeLeft:scale:x")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.025, -0.25, 0, 0.25, 0, 0.025, -0.25, 0, 0.25, 0, 0.025, -0.25, 0, 0.25, 0, 0.025, -0.25, 0, 0.25, 0, 0.025, -0.25, 0, 0.25, 0, 0.025, -0.25, 0, 0.25, 0, 0.025, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.3, 1.8, 1.9, 2.2, 4, 5)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("GFX/EyeLeft:scale:y")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.025, -0.25, 0, 0.25, 0, 0.024, -0.25, 0, 0.25, 0, 0.025, -0.25, 0, 0.25, 0, 0.001, -0.25, 0, 0.25, 0, 0.025, -0.25, 0, 0.25, 0, 0.024, -0.25, 0, 0.25, 0, 0.025, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.3, 1.8, 1.9, 2.2, 4, 5)
+}
+
+[sub_resource type="Animation" id="Animation_633hq"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GFX/Mouth:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.025, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GFX/Mouth:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.025, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GFX/Mouth:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GFX/Mouth:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.61, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GFX/Body:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("GFX/Body:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.61, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("GFX/Body:scale:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.025, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("GFX/Body:scale:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.025, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("GFX/EyeRight:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("GFX/EyeRight:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.61, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("GFX/EyeRight:scale:x")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.025, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("GFX/EyeRight:scale:y")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.025, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("GFX/EyeLeft:position:x")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("GFX/EyeLeft:position:y")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.61, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("GFX/EyeLeft:scale:x")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.025, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("GFX/EyeLeft:scale:y")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.025, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_phwkh"]
+_data = {
+"Player_Idle": SubResource("Animation_obokn"),
+"RESET": SubResource("Animation_633hq")
+}
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_vkip4")
@@ -13,7 +388,59 @@ script = ExtResource("1_vkip4")
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_msb8d")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_fkbhf")
-hframes = 4
-vframes = 4
+[node name="GFX" type="Node2D" parent="."]
+
+[node name="BackPack" type="Sprite2D" parent="GFX"]
+position = Vector2(0, 0.61)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("2_u5g0j")
+
+[node name="Body" type="Sprite2D" parent="GFX"]
+position = Vector2(0, 0.61)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("2_6a4u0")
+
+[node name="HeadBg" type="Sprite2D" parent="GFX"]
+position = Vector2(0, 0.61)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("3_f71vs")
+
+[node name="EyeLeft" type="Sprite2D" parent="GFX"]
+position = Vector2(0, 0.61)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("5_y4u14")
+
+[node name="EyeRight" type="Sprite2D" parent="GFX"]
+position = Vector2(0, 0.61)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("4_kspiy")
+
+[node name="HandLeft" type="Sprite2D" parent="GFX"]
+position = Vector2(0, 0.61)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("6_8t4na")
+
+[node name="HandRight" type="Sprite2D" parent="GFX"]
+position = Vector2(0, 0.61)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("7_8vulm")
+
+[node name="LegLeft" type="Sprite2D" parent="GFX"]
+position = Vector2(0, 0.61)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("9_5cnye")
+
+[node name="LegRight" type="Sprite2D" parent="GFX"]
+position = Vector2(0, 0.61)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("8_rwsb2")
+
+[node name="Mouth" type="Sprite2D" parent="GFX"]
+position = Vector2(0, 0.61)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("11_kb26p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_phwkh")
+}
