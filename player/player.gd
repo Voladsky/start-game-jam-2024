@@ -2,14 +2,23 @@ extends CharacterBody2D
 
 @export var speed: int = 100
 @onready var animation = $AnimationPlayer
+@onready var GFX = $GFX
 
 var direction: Vector2 = Vector2.ZERO
 
 func _process(_delta):
 	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	animation.play("Player_Idle")
+	if(direction.length() > 0):
+		animation.play("Player_Walk")
+		if(direction.x < 0):
+			GFX.scale.x = 1
+		else:
+			GFX.scale.x = -1
+	else:
+		animation.play("Player_Idle")
 
 func _physics_process(_delta):
 	velocity = direction * speed
+	
 	move_and_slide()
 	
