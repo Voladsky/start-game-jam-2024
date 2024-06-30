@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://smcun11tc08a"]
+[gd_scene load_steps=7 format=3 uid="uid://bliaog5arflg5"]
 
 [ext_resource type="Script" path="res://tilemap/trash_tile.gd" id="1_rdh40"]
 [ext_resource type="Texture2D" uid="uid://b0x1a03umb5yg" path="res://assets/sprites/Tilesets/Trash.png" id="2_61pxw"]

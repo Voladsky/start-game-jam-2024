@@ -25,7 +25,7 @@ func _unhandled_input(_event):
 		if $Frame.visible:
 			if $Sprite2D.frame == 2:
 				var instance = field.instantiate()
-				get_tree().root.add_child(instance)
+				get_tree().get_root().get_node("World").add_child(instance)
 				instance.position = position
 				queue_free()
 				

@@ -7,14 +7,14 @@ func immediate_replace():
 	var instance = water_tile.instantiate()
 	var cattail = preload("res://tilemap/cattail.tscn")
 	instance.add_child(cattail.instantiate())
-	get_tree().root.add_child(instance)
+	get_tree().get_root().get_node("World").add_child(instance)
 	instance.position = position
 
 func replace_with_water():
 	var rng = RandomNumberGenerator.new()
 	await get_tree().create_timer(rng.randi() % 3).timeout
 	var instance = water_tile.instantiate()
-	get_tree().root.add_child(instance)
+	get_tree().get_root().get_node("World").add_child(instance)
 	instance.position = position
 	queue_free()
 	

@@ -59,4 +59,4 @@ func _on_timer_timeout():
 
 
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://world/world.tscn")
+	get_tree().reload_current_scene()

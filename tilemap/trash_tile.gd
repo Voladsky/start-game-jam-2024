@@ -26,7 +26,7 @@ func _process(_event):
 			if trash_health == 0:
 				can_dig = false
 				var instance = field_tile.instantiate()
-				get_tree().root.add_child(instance)
+				get_tree().get_root().get_node("World").add_child(instance)
 				instance.position = position
 				queue_free()
 			else:

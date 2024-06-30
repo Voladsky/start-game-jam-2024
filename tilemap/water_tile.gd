@@ -32,7 +32,7 @@ func _process(_delta):
 				$Label.text = str(water_amount)
 				if water_amount == 0:
 					var instance = field_tile.instantiate()
-					get_tree().root.add_child(instance)
+					get_tree().get_root().get_node("World").add_child(instance)
 					instance.position = position
 					queue_free()
 				can_suck = false

@@ -6,14 +6,14 @@ var field_tile = preload("res://tilemap/field_tile.tscn")
 func immediate_replace():
 	var spiderplant = preload("res://tilemap/spiderplant.tscn")
 	var instance = spiderplant.instantiate()
-	get_tree().root.add_child(instance)
+	get_tree().get_root().get_node("World").add_child(instance)
 	instance.position = position
 
 func replace_with_field():
 	var rng = RandomNumberGenerator.new()
 	await get_tree().create_timer(rng.randi() % 3).timeout
 	var instance = field_tile.instantiate()
-	get_tree().root.add_child(instance)
+	get_tree().get_root().get_node("World").add_child(instance)
 	instance.position = position
 	queue_free()
 	
