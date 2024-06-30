@@ -56,7 +56,7 @@ func _input_event(_viewport, _event, _shape_idx):
 
 
 func _on_mouse_entered():
-	if get_node_or_null("Rmb"):
+	if get_node_or_null("Rmb") and $Plant.visible:
 		$Rmb.visible = true
 	if (player.position - position).length() < 128:
 		$Frame.visible = true
