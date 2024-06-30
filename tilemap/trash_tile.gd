@@ -1,6 +1,5 @@
 extends StaticBody2D
 
-
 var trash_health = 10
 var player
 var can_dig = true
@@ -19,11 +18,9 @@ func _ready():
 	$Sprite2D.flip_h = rng.randi() % 2
 	$Sprite2D.flip_v = rng.randi() % 2
 
-
 func _unhandled_input(_event):
 	if Input.is_action_pressed("left_click"):
 		if $Frame.visible and can_dig:
-			$SuckSound.play()
 			trash_health -= 1
 			$Label.text = str(trash_health)
 			if trash_health == 0:
@@ -31,16 +28,19 @@ func _unhandled_input(_event):
 				var instance = field_tile.instantiate()
 				get_tree().root.add_child(instance)
 				instance.position = position
-
 				queue_free()
-			get_tree().create_timer(0.2).timeout.connect(func(): can_dig = true)
+			else:
+				can_dig = false
+				var timer = get_tree().create_timer(0.2)
+				timer.timeout.connect(Callable(self, "_on_timer_timeout"))
 
+func _on_timer_timeout():
+	can_dig = true
 
 func _on_mouse_entered():
 	if (player.position - position).length() < 128:
 		$Label.visible = true
 		$Frame.visible = true
-
 
 func _on_mouse_exited():
 	$Label.visible = false
