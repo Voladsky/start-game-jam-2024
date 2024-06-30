@@ -3,7 +3,14 @@ extends StaticBody2D
 var player
 var water_tile = preload("res://tilemap/water_tile.tscn")
 
+func replace_with_water():
+	var instance = water_tile.instantiate()
+	get_tree().root.add_child(instance)
+	instance.position = position				
+	queue_free()
+	
 func _ready():
+	GameManager.cleaning_water.connect(_on_cleaning)
 	var rng = RandomNumberGenerator.new()
 	player = get_tree().get_nodes_in_group("player")[0]
 	var possible_textures = [
@@ -17,12 +24,7 @@ func _unhandled_input(_event):
 		if $Frame.visible:			
 				if GameManager.change_cattail_amount(-1):
 					$PlantSound.play()
-					
-					var instance = water_tile.instantiate()
-					get_tree().root.add_child(instance)
-					instance.position = position
-					
-					queue_free()
+					GameManager.cleaning_water.emit(position)
 					
 func _on_mouse_entered():
 	if (player.position - position).length() < 128:
@@ -31,3 +33,9 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	$Frame.visible = false
+
+
+func _on_cleaning(start):
+	#print((position - start).length())
+	if (position - start).length() < 128:
+		replace_with_water()
