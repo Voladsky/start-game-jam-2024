@@ -18,6 +18,7 @@ func _input_event(_viewport, _event, _shape_idx):
 				if need_water and GameManager.change_water_amount(-1):
 					need_water = false
 					$Water.visible = false
+					$WateringParticle.emitting = true
 					for i in range(2):
 						await get_tree().create_timer(2).timeout
 						$Plant.frame += 1

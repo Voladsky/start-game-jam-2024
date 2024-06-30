@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://t8a2ja5weun"]
+[gd_scene load_steps=8 format=3 uid="uid://t8a2ja5weun"]
 
 [ext_resource type="Theme" uid="uid://2hgjbonddwlt" path="res://UI/ui_theme/MinimalUI.tres" id="1_agjqw"]
 [ext_resource type="Script" path="res://UI/ui.gd" id="1_p3d7a"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bpgi31hb85uds" path="res://assets/sprites/Tilesets/WaterDrop.png" id="5_adthm"]
 [ext_resource type="Texture2D" uid="uid://d2wdpwlghx3i2" path="res://assets/sprites/Tilesets/PotatoPickUp.png" id="6_7o4wi"]
 [ext_resource type="Texture2D" uid="uid://ci84hu4ihk43o" path="res://assets/sprites/Tilesets/CatTailPickUp.png" id="7_74xcj"]
+[ext_resource type="Texture2D" uid="uid://bidcrjyikujbc" path="res://assets/sprites/Tilesets/SpiderPlantPickUp.png" id="7_tw52s"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_p3d7a")
@@ -86,7 +87,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Resources/HBoxContainer/SpiderPlant"]
 layout_mode = 2
-texture = ExtResource("6_7o4wi")
+texture = ExtResource("7_tw52s")
 
 [node name="Label" type="Label" parent="Resources/HBoxContainer/SpiderPlant"]
 layout_mode = 2

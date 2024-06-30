@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://plant_generator/plant_generator.gd" id="1_811cq"]
 [ext_resource type="Texture2D" uid="uid://sdl7ipo5msu1" path="res://assets/sprites/Tilesets/WashingMachine.png" id="2_iweth"]
-[ext_resource type="Texture2D" uid="uid://drn7d1m4hoop1" path="res://assets/sprites/Objects/tomato_seeds.png" id="3_bt5cc"]
 [ext_resource type="Theme" uid="uid://2hgjbonddwlt" path="res://UI/ui_theme/MinimalUI.tres" id="3_e8obr"]
 [ext_resource type="FontFile" uid="uid://dmxnw2ijq7o6v" path="res://assets/fonts/Zametka_Parletter.otf" id="3_j1sd5"]
-[ext_resource type="Texture2D" uid="uid://d3xk5ygx7le0l" path="res://assets/sprites/Objects/tomato_item.png" id="4_m2bix"]
-[ext_resource type="Texture2D" uid="uid://dyfo0dygd8bl" path="res://assets/sprites/Objects/wheat_seeds.png" id="5_20ixy"]
-[ext_resource type="Texture2D" uid="uid://b3wsply18aii3" path="res://assets/sprites/Objects/wheat_item.png" id="5_vuwbv"]
+[ext_resource type="Texture2D" uid="uid://c8casiwr8wweq" path="res://assets/sprites/Tilesets/CatTailButton.png" id="5_s8hxh"]
+[ext_resource type="Texture2D" uid="uid://d3vsydb6og4nm" path="res://assets/sprites/Tilesets/CatTailButtonHover.png" id="6_8ownj"]
+[ext_resource type="Texture2D" uid="uid://ve45jp6058to" path="res://assets/sprites/Tilesets/SpiderPlantButton.png" id="7_5avgy"]
+[ext_resource type="Texture2D" uid="uid://dy83dkgugwlg" path="res://assets/sprites/Tilesets/SpiderPlantButtonHover.png" id="8_bqnm0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j4xn7"]
 radius = 117.341
@@ -44,6 +44,7 @@ offset_top = -25.0
 offset_right = 63.0
 offset_bottom = 27.0
 theme = ExtResource("3_e8obr")
+theme_override_constants/separation = 16
 
 [node name="Cattail" type="VBoxContainer" parent="UI/UI"]
 layout_mode = 2
@@ -51,8 +52,8 @@ layout_mode = 2
 [node name="Cattail" type="TextureButton" parent="UI/UI/Cattail"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("4_m2bix")
-texture_hover = ExtResource("3_bt5cc")
+texture_normal = ExtResource("5_s8hxh")
+texture_hover = ExtResource("6_8ownj")
 stretch_mode = 3
 
 [node name="Label" type="Label" parent="UI/UI/Cattail"]
@@ -76,8 +77,8 @@ layout_mode = 2
 [node name="SpiderPlant" type="TextureButton" parent="UI/UI/SpiderPlant"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("5_vuwbv")
-texture_hover = ExtResource("5_20ixy")
+texture_normal = ExtResource("7_5avgy")
+texture_hover = ExtResource("8_bqnm0")
 stretch_mode = 3
 
 [node name="Label" type="Label" parent="UI/UI/SpiderPlant"]
