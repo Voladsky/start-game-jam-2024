@@ -7,10 +7,11 @@ func _ready():
 	$Plant.play()
 	player = get_tree().get_nodes_in_group("player")[0]
 	field = preload("res://tilemap/field_tile.tscn")
-	for i in range(2):
-		await get_tree().create_timer(2).timeout
-		$Sprite2D.frame += 1
-		$GrowingParticle.emitting = true
+	if $Sprite2D.frame != 2:
+		for i in range(2):
+			await get_tree().create_timer(2).timeout
+			$Sprite2D.frame += 1
+			$GrowingParticle.emitting = true
 
 func _on_mouse_entered():
 	if (player.position - position).length() < 128:

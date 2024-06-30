@@ -82,3 +82,7 @@ func _on_diary_pressed():
 	get_tree().paused = !get_tree().paused
 	$DiaryLayer/Diary.visible = !$DiaryLayer/Diary.visible
 	
+
+
+func _on_go_to_menu_pressed():
+	get_tree().change_scene_to_file("res://UI/main_menu.tscn")

@@ -56,13 +56,13 @@ func _input_event(_viewport, _event, _shape_idx):
 
 
 func _on_mouse_entered():
-	if $Rmb != null:
+	if get_node_or_null("Rmb"):
 		$Rmb.visible = true
 	if (player.position - position).length() < 128:
 		$Frame.visible = true
 
 
 func _on_mouse_exited():
-	if $Rmb != null:
+	if get_node_or_null("Rmb"):
 		$Rmb.visible = false
 	$Frame.visible = false
