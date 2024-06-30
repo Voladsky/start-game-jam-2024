@@ -31,7 +31,7 @@ func _input_event(_viewport, _event, _shape_idx):
 					$Water.visible = false
 					$WateringParticle.emitting = true
 					for i in range(2):
-						await get_tree().create_timer(2).timeout
+						await get_tree().create_timer(3).timeout
 						$GrowingParticle.emitting = true
 						$Plant.frame += 1
 			else:

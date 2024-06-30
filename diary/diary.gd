@@ -13,7 +13,7 @@ func _ready():
 	]
 	current_page = 0
 
-func _process(delta):
+func _process(_delta):
 	$Buttons/Left.visible = current_page != 0
 	$Buttons/Right.visible = current_page != 4
 

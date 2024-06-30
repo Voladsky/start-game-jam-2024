@@ -21,6 +21,8 @@ func _ready():
 func _process(_event):
 	if Input.is_action_pressed("left_click"):
 		if $Frame.visible and can_dig:
+			if not $SuckSound.playing:
+				$SuckSound.play()
 			trash_health -= 1
 			$Label.text = str(trash_health)
 			if trash_health == 0:

@@ -29,7 +29,7 @@ func _ready():
 	$Field.texture = possible_textures[rng.randi() % 3]
 	$Field.flip_h = rng.randi() % 2
 	$Field.flip_v = rng.randi() % 2
-		
+
 func _unhandled_input(_event):
 	if Input.is_action_pressed("left_click"):
 		if $Frame.visible:
@@ -39,7 +39,7 @@ func _unhandled_input(_event):
 					GameManager.cleaning_field.disconnect(_on_cleaning)
 					GameManager.cleaning_field.emit(position)
 					queue_free()
-					
+
 func _on_mouse_entered():
 	if (player.position - position).length() < 128:
 		$Frame.visible = true
