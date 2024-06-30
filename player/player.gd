@@ -30,6 +30,8 @@ func _process(_delta):
 			walking_sound.stop()
 		animation.play("Player_Idle")
 		animation.speed_scale = 1
+	
+	$GFX/BackPack.modulate = Color(1,1,1,1) - Color(1,0,0,0) * GameManager.water_amount/GameManager.max_water_amount
 
 func _physics_process(_delta):
 	velocity = direction * speed
