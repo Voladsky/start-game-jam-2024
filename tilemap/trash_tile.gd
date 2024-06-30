@@ -18,7 +18,7 @@ func _ready():
 	$Sprite2D.flip_h = rng.randi() % 2
 	$Sprite2D.flip_v = rng.randi() % 2
 
-func _unhandled_input(_event):
+func _process(_event):
 	if Input.is_action_pressed("left_click"):
 		if $Frame.visible and can_dig:
 			trash_health -= 1
