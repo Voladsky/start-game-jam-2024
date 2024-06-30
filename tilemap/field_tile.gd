@@ -10,8 +10,16 @@ var player
 func _ready():
 	var rng = RandomNumberGenerator.new()
 	player = get_tree().get_nodes_in_group("player")[0]
+	var possible_textures = [
+		preload("res://assets/sprites/Tilesets/Ground.png"),
+		preload("res://assets/sprites/Tilesets/Ground1.png"),
+		preload("res://assets/sprites/Tilesets/Ground2.png")
+	]
+	var possible_rotations = [-90, 0, 90, 180]
+	$Field.texture = possible_textures[rng.randi() % 3]
 	$Field.flip_h = rng.randi() % 2
 	$Field.flip_v = rng.randi() % 2
+	$Field.rotation_degrees = possible_rotations[rng.randi() % 4]
 
 
 func _input_event(_viewport, _event, _shape_idx):
