@@ -1,0 +1,288 @@
+[gd_scene load_steps=9 format=3 uid="uid://ceetuuf6wgqlj"]
+
+[ext_resource type="Script" path="res://diary/diary.gd" id="1_ngsg2"]
+[ext_resource type="Texture2D" uid="uid://baslkx7t6j7oi" path="res://assets/sprites/Tilesets/Diary.png" id="1_tqu3h"]
+[ext_resource type="Theme" uid="uid://2hgjbonddwlt" path="res://UI/ui_theme/MinimalUI.tres" id="2_sf2kg"]
+[ext_resource type="Texture2D" uid="uid://s68r7s4ow3uo" path="res://assets/sprites/Tilesets/Arrow.png" id="3_clwdy"]
+[ext_resource type="Texture2D" uid="uid://b7dmojxe163ep" path="res://assets/sprites/Tilesets/DiaryPotato.png" id="4_ll1y7"]
+[ext_resource type="Texture2D" uid="uid://4kpki7m6wsq" path="res://assets/sprites/Tilesets/DiaryCatTail.png" id="5_8raf3"]
+[ext_resource type="Texture2D" uid="uid://c2ssyja61ird3" path="res://assets/sprites/Tilesets/DiarySpiderPlant.png" id="6_2jfdi"]
+[ext_resource type="Texture2D" uid="uid://dmyh760u250c3" path="res://assets/sprites/Tilesets/ArrowHover.png" id="8_qfrek"]
+
+[node name="Diary" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ngsg2")
+
+[node name="FirstPage" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="Sprite2D" parent="FirstPage"]
+texture = ExtResource("1_tqu3h")
+
+[node name="Header" type="Label" parent="FirstPage"]
+layout_mode = 0
+offset_left = -270.0
+offset_top = -158.0
+offset_right = 278.0
+offset_bottom = -103.0
+theme = ExtResource("2_sf2kg")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0.392157, 0.235294, 0.0392157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "ЭНЦИКЛОПЕДИЯ РАСТЕНИЙ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Desc" type="Label" parent="FirstPage"]
+layout_mode = 0
+offset_left = -270.0
+offset_top = 4.0
+offset_right = 275.0
+offset_bottom = 190.0
+theme = ExtResource("2_sf2kg")
+theme_override_colors/font_color = Color(0.392157, 0.235294, 0.0392157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "НА СЛУЧАЙ, ЕСЛИ ВЫ ОКАЗАЛИСЬ
+В ПОСТАПОКАЛИПТИЧЕСКОЙ
+ПУСТОШИ
+И НЕ ЗНАЕТЕ, ЧТО ДЕЛАТЬ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="FirstPage"]
+layout_mode = 0
+offset_left = -139.0
+offset_top = 298.0
+offset_right = 132.0
+offset_bottom = 363.0
+theme = ExtResource("2_sf2kg")
+theme_override_colors/font_color = Color(0.392157, 0.235294, 0.0392157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Издательство \"ufoLogika\"
+Город N, 2012"
+horizontal_alignment = 1
+
+[node name="SecondPage" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BackGround" type="Sprite2D" parent="SecondPage"]
+texture = ExtResource("4_ll1y7")
+
+[node name="Header" type="Label" parent="SecondPage"]
+layout_mode = 0
+offset_left = -328.0
+offset_top = -250.0
+offset_right = 90.0
+offset_bottom = -137.0
+theme = ExtResource("2_sf2kg")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0.392157, 0.235294, 0.0392157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "КАРТОФЕЛЬ
+(Solanum tuberosum)"
+vertical_alignment = 1
+
+[node name="Desc" type="Label" parent="SecondPage"]
+layout_mode = 0
+offset_left = -328.0
+offset_top = -171.0
+offset_right = 293.0
+offset_bottom = 136.0
+theme = ExtResource("2_sf2kg")
+theme_override_colors/font_color = Color(0.392157, 0.235294, 0.0392157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Картофель - многолетнее
+травянистое растение,
+один из самых распространённых
+видов сельскохозяйственных
+культур. Самое простое блюдо из 
+картофеля - пюрешка, восхитительно
+сочетается с котлетками."
+vertical_alignment = 1
+
+[node name="Desc2" type="Label" parent="SecondPage"]
+layout_mode = 0
+offset_left = -294.0
+offset_top = 31.0
+offset_right = 327.0
+offset_bottom = 338.0
+theme = ExtResource("2_sf2kg")
+theme_override_colors/font_color = Color(0.392157, 0.235294, 0.0392157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Но картофеля нужно много. 
+Собирай картофель.
+Выполняй норму. "
+vertical_alignment = 1
+
+[node name="ThirdPage" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BackGround" type="Sprite2D" parent="ThirdPage"]
+texture = ExtResource("5_8raf3")
+
+[node name="Header" type="Label" parent="ThirdPage"]
+layout_mode = 0
+offset_left = -328.0
+offset_top = -250.0
+offset_right = 90.0
+offset_bottom = -137.0
+theme = ExtResource("2_sf2kg")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0.392157, 0.235294, 0.0392157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "РОГОЗ
+(Typha latifolia)"
+vertical_alignment = 1
+
+[node name="Desc" type="Label" parent="ThirdPage"]
+layout_mode = 0
+offset_left = -325.0
+offset_top = -164.0
+offset_right = 296.0
+offset_bottom = 143.0
+theme = ExtResource("2_sf2kg")
+theme_override_colors/font_color = Color(0.392157, 0.235294, 0.0392157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Рогоз - многолетнее травянистое растение.
+Произрастает повсеместно в боло-
+тистых регионах почти по всему миру.
+Согласно исследованиям, помогает
+избавить воду от лишней органики и
+насытить её фосфором. Если хочешь
+поливать грядки чистой водой, задумайся
+о выращивании рогоза. "
+vertical_alignment = 1
+
+[node name="Desc2" type="Label" parent="ThirdPage"]
+layout_mode = 0
+offset_left = -293.0
+offset_top = 43.0
+offset_right = 328.0
+offset_bottom = 350.0
+theme = ExtResource("2_sf2kg")
+theme_override_colors/font_color = Color(0.392157, 0.235294, 0.0392157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Не пытайся съесть его соцветие.
+Оно невкусное.
+И взрывается."
+vertical_alignment = 1
+
+[node name="FourthPage" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BackGround" type="Sprite2D" parent="FourthPage"]
+texture = ExtResource("6_2jfdi")
+
+[node name="Header" type="Label" parent="FourthPage"]
+layout_mode = 0
+offset_left = -319.0
+offset_top = -280.0
+offset_right = 170.0
+offset_bottom = -109.0
+theme = ExtResource("2_sf2kg")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0.392157, 0.235294, 0.0392157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "ХЛОРОФИТУМ
+(Chlorophytum
+comosum)"
+vertical_alignment = 1
+
+[node name="Desc" type="Label" parent="FourthPage"]
+layout_mode = 0
+offset_left = -331.0
+offset_top = -154.0
+offset_right = 290.0
+offset_bottom = 153.0
+theme = ExtResource("2_sf2kg")
+theme_override_colors/font_color = Color(0.392157, 0.235294, 0.0392157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Хлорофитум - многолетнее
+травянистое растение.
+Согласно исследованиям НАСА,
+способен поглощать угарный газ и
+оксид азота.  Ты, конечно, не космонавт,
+но тебе понадобится бороться с ядом
+в воздухе. Хлорофитум может с этим помочь.
+"
+vertical_alignment = 1
+
+[node name="Desc2" type="Label" parent="FourthPage"]
+layout_mode = 0
+offset_left = -297.0
+offset_top = 69.0
+offset_right = 324.0
+offset_bottom = 376.0
+theme = ExtResource("2_sf2kg")
+theme_override_colors/font_color = Color(0.392157, 0.235294, 0.0392157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "А ещё хлорофитум похож на
+паука. К сожалению, авторы
+энциклопедии не увидели
+сильных схожестей. 
+Тем не менее, его называют 
+\"растение-паук\"."
+vertical_alignment = 1
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Left" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = -255.0
+offset_right = 292.0
+offset_bottom = -183.0
+rotation = -3.14159
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_clwdy")
+texture_hover = ExtResource("8_qfrek")
+
+[node name="Right" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 221.0
+offset_top = -337.0
+offset_right = 293.0
+offset_bottom = -265.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_clwdy")
+texture_hover = ExtResource("8_qfrek")
+
+[connection signal="pressed" from="Buttons/Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="Buttons/Right" to="." method="_on_right_pressed"]

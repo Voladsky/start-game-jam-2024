@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://t8a2ja5weun"]
+[gd_scene load_steps=13 format=3 uid="uid://t8a2ja5weun"]
 
 [ext_resource type="Theme" uid="uid://2hgjbonddwlt" path="res://UI/ui_theme/MinimalUI.tres" id="1_agjqw"]
 [ext_resource type="Script" path="res://UI/ui.gd" id="1_p3d7a"]
@@ -8,6 +8,15 @@
 [ext_resource type="Texture2D" uid="uid://d2wdpwlghx3i2" path="res://assets/sprites/Tilesets/PotatoPickUp.png" id="6_7o4wi"]
 [ext_resource type="Texture2D" uid="uid://ci84hu4ihk43o" path="res://assets/sprites/Tilesets/CatTailPickUp.png" id="7_74xcj"]
 [ext_resource type="Texture2D" uid="uid://bidcrjyikujbc" path="res://assets/sprites/Tilesets/SpiderPlantPickUp.png" id="7_tw52s"]
+[ext_resource type="Texture2D" uid="uid://bassfenbbb4mj" path="res://assets/sprites/Tilesets/Book.png" id="9_a2jf0"]
+[ext_resource type="PackedScene" uid="uid://ceetuuf6wgqlj" path="res://diary/diary.tscn" id="10_67e6o"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_ml6aw"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_r1607"]
+events = [SubResource("InputEventKey_ml6aw")]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_p3d7a")
@@ -17,6 +26,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -2.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -170,9 +181,28 @@ theme = ExtResource("1_agjqw")
 theme_override_fonts/font = ExtResource("3_88iga")
 theme_override_font_sizes/font_size = 35
 
+[node name="Diary2" type="TextureButton" parent="Resources"]
+process_mode = 3
+layout_mode = 0
+offset_left = 1078.0
+offset_top = 124.0
+offset_right = 1142.0
+offset_bottom = 188.0
+mouse_default_cursor_shape = 2
+shortcut = SubResource("Shortcut_r1607")
+texture_normal = ExtResource("9_a2jf0")
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 60.0
 one_shot = true
+
+[node name="DiaryLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Diary" parent="DiaryLayer" instance=ExtResource("10_67e6o")]
+process_mode = 3
+visible = false
+scale = Vector2(0.7, 0.7)
 
 [node name="Panel" type="Panel" parent="." groups=["panel"]]
 visible = false
@@ -211,5 +241,6 @@ theme_override_fonts/font = ExtResource("3_88iga")
 theme_override_font_sizes/font_size = 50
 text = "начать заново"
 
+[connection signal="pressed" from="Resources/Diary2" to="." method="_on_diary_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_button_pressed"]
