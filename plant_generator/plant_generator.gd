@@ -20,10 +20,12 @@ func _on_body_exited(_body):
 
 
 func _on_cattail_pressed():
+	$Buy.play()
 	if GameManager.change_potato_amount(-cattail_cost):
 		GameManager.change_cattail_amount(1)
 
 
 func _on_spider_plant_pressed():
+	$Buy.play()
 	if GameManager.change_potato_amount(-spiderplant_cost):
 		GameManager.change_spiderplant_amount(1)

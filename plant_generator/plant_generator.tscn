@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bj5vcfdw0w6pp"]
+[gd_scene load_steps=11 format=3 uid="uid://bj5vcfdw0w6pp"]
 
 [ext_resource type="Script" path="res://plant_generator/plant_generator.gd" id="1_811cq"]
 [ext_resource type="Texture2D" uid="uid://sdl7ipo5msu1" path="res://assets/sprites/Tilesets/WashingMachine.png" id="2_iweth"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d3vsydb6og4nm" path="res://assets/sprites/Tilesets/CatTailButtonHover.png" id="6_8ownj"]
 [ext_resource type="Texture2D" uid="uid://ve45jp6058to" path="res://assets/sprites/Tilesets/SpiderPlantButton.png" id="7_5avgy"]
 [ext_resource type="Texture2D" uid="uid://dy83dkgugwlg" path="res://assets/sprites/Tilesets/SpiderPlantButtonHover.png" id="8_bqnm0"]
+[ext_resource type="AudioStream" uid="uid://ctydm2hodysqh" path="res://assets/sounds/buy.wav" id="9_np3hy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j4xn7"]
 radius = 117.341
@@ -95,6 +96,9 @@ theme_override_fonts/font = ExtResource("3_j1sd5")
 theme_override_font_sizes/font_size = 30
 text = "10 к"
 horizontal_alignment = 1
+
+[node name="Buy" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_np3hy")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
