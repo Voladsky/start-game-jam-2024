@@ -38,10 +38,14 @@ func _on_timer_timeout():
 	can_dig = true
 
 func _on_mouse_entered():
+	if $Rmb != null:
+		$Rmb.visible = true
 	if (player.position - position).length() < 128:
 		$Label.visible = true
 		$Frame.visible = true
 
 func _on_mouse_exited():
+	if $Rmb != null:
+		$Rmb.visible = false
 	$Label.visible = false
 	$Frame.visible = false
