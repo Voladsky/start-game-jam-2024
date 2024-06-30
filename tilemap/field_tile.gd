@@ -18,7 +18,7 @@ func _input_event(_viewport, _event, _shape_idx):
 				if need_water and GameManager.change_water_amount(-1):
 					need_water = false
 					$Water.visible = false
-					for i in range(3):
+					for i in range(2):
 						await get_tree().create_timer(2).timeout
 						$Plant.frame += 1
 			else:
@@ -28,9 +28,9 @@ func _input_event(_viewport, _event, _shape_idx):
 					need_water = true
 	
 	if Input.is_action_pressed("right_click"):
-		if $Plant.frame == 4:
+		if $Plant.frame == 2:
 			$Plant.visible = false
-			$Plant.frame = 1
+			$Plant.frame = 0
 			
 			for i in range(randi_range(1, 3)):
 				var item_instance = item_drop.instantiate()
