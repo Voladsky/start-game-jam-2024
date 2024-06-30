@@ -28,6 +28,7 @@ func _input_event(_viewport, _event, _shape_idx):
 			if $Plant.visible:
 				if need_water and GameManager.change_water_amount(-1):
 					need_water = false
+					$WaterSound.play()
 					$Water.visible = false
 					$WateringParticle.emitting = true
 					for i in range(2):

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://liunx44nuup6"]
+[gd_scene load_steps=7 format=3 uid="uid://liunx44nuup6"]
 
 [ext_resource type="Texture2D" uid="uid://co7aipchlhjmq" path="res://assets/sprites/Tilesets/CatTailSheet.png" id="1_e80ia"]
 [ext_resource type="Script" path="res://tilemap/cattail.gd" id="2_3pdlp"]
 [ext_resource type="Texture2D" uid="uid://dpfb0hm65lj42" path="res://assets/sprites/Objects/BaseParticle.png" id="3_a41x6"]
+[ext_resource type="AudioStream" uid="uid://d2woawvuy05gj" path="res://assets/sounds/plant_water.wav" id="4_37s5r"]
 
 [sub_resource type="Curve" id="Curve_uc7rq"]
 _data = [Vector2(0, 0.747253), 0.0, 0.0, 0, 0]
@@ -37,3 +38,6 @@ scale_curve_x = SubResource("Curve_uc7rq")
 scale_curve_y = null
 color = Color(0, 1, 0, 1)
 color_ramp = SubResource("Gradient_trark")
+
+[node name="Plant" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_37s5r")

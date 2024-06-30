@@ -6,3 +6,4 @@ func _ready():
 		await get_tree().create_timer(2).timeout
 		frame += 1
 		$GrowingParticle.emitting = true
+		$Plant.play()
