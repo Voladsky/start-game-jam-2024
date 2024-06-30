@@ -69,3 +69,8 @@ func _on_timer_timeout():
 
 func _on_button_pressed():
 	get_tree().reload_current_scene()
+
+
+func _on_diary_pressed():
+	get_tree().paused = !get_tree().paused
+	$DiaryLayer/Diary.visible = !$DiaryLayer/Diary.visible
