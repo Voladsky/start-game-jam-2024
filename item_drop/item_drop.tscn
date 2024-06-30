@@ -1,19 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://dlpe10c4ord0v"]
 
 [ext_resource type="Script" path="res://item_drop/item_drop.gd" id="1_c60uv"]
-[ext_resource type="Texture2D" uid="uid://b3wsply18aii3" path="res://assets/sprites/Objects/wheat_item.png" id="2_c76fg"]
+[ext_resource type="Texture2D" uid="uid://d2wdpwlghx3i2" path="res://assets/sprites/Tilesets/PotatoPickUp.png" id="2_ilbeh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pelje"]
-radius = 56.0
+radius = 248.0
 
 [node name="ItemDrop" type="Area2D"]
+scale = Vector2(0.4, 0.4)
 script = ExtResource("1_c60uv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_pelje")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_c76fg")
+texture = ExtResource("2_ilbeh")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

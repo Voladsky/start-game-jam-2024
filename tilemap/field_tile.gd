@@ -35,7 +35,7 @@ func _input_event(_viewport, _event, _shape_idx):
 			for i in range(randi_range(1, 3)):
 				var item_instance = item_drop.instantiate()
 				get_tree().root.add_child(item_instance)
-				item_instance.position = position + Vector2(randf_range(-4, 4), randf_range(-4, 4))
+				item_instance.position = position + Vector2(randf_range(-32, 32), randf_range(-32, 32))
 
 
 func _on_mouse_entered():
