@@ -9,7 +9,7 @@ func _on_play_pressed():
 
 
 func _on_diary_pressed():
-	pass # Replace with function body.
+	$TextureRect/DiaryPages.visible = !$TextureRect/DiaryPages.visible
 
 
 func _on_quit_pressed():
