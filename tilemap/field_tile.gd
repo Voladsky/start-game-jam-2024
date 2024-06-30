@@ -45,6 +45,7 @@ func _input_event(_viewport, _event, _shape_idx):
 		if $Frame.visible:
 			if $Plant.frame == 2:
 				$CollectSound.play()
+				$CollectParticle.emitting = true
 				$Plant.visible = false
 				$Plant.frame = 0
 			

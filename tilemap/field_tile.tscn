@@ -95,5 +95,28 @@ scale_curve_y = null
 color = Color(0, 1, 0, 1)
 color_ramp = SubResource("Gradient_5il0g")
 
+[node name="CollectParticle" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 15
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("8_gmfcf")
+emission_shape = 3
+emission_rect_extents = Vector2(20, 20)
+spread = 180.0
+gravity = Vector2(0, -100)
+angular_velocity_min = 1.0
+angular_velocity_max = 1.0
+radial_accel_min = 30.0
+radial_accel_max = 50.0
+scale_amount_min = 0.1
+scale_amount_max = 0.1
+split_scale = true
+scale_curve_x = SubResource("Curve_mdcq0")
+scale_curve_y = null
+color = Color(1, 0.831373, 0.313726, 1)
+color_ramp = SubResource("Gradient_5il0g")
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
