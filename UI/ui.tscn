@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://t8a2ja5weun"]
+[gd_scene load_steps=9 format=3 uid="uid://t8a2ja5weun"]
 
 [ext_resource type="Theme" uid="uid://2hgjbonddwlt" path="res://UI/ui_theme/MinimalUI.tres" id="1_agjqw"]
 [ext_resource type="Script" path="res://UI/ui.gd" id="1_p3d7a"]
 [ext_resource type="FontFile" uid="uid://dmxnw2ijq7o6v" path="res://assets/fonts/Zametka_Parletter.otf" id="3_88iga"]
+[ext_resource type="Texture2D" uid="uid://dy1xxqm42724" path="res://assets/sprites/Tilesets/ClOCK.png" id="3_owp4u"]
 [ext_resource type="Texture2D" uid="uid://bpgi31hb85uds" path="res://assets/sprites/Tilesets/WaterDrop.png" id="5_adthm"]
 [ext_resource type="Texture2D" uid="uid://d2wdpwlghx3i2" path="res://assets/sprites/Tilesets/PotatoPickUp.png" id="6_7o4wi"]
 [ext_resource type="Texture2D" uid="uid://ci84hu4ihk43o" path="res://assets/sprites/Tilesets/CatTailPickUp.png" id="7_74xcj"]
@@ -21,77 +22,150 @@ grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("1_agjqw")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Resources"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Resources"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
-grow_horizontal = 0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -485.0
+offset_right = 485.0
+offset_bottom = 123.0
+grow_horizontal = 2
+theme_override_constants/separation = 80
+alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Resources/VBoxContainer"]
+[node name="Time" type="HBoxContainer" parent="Resources/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 7
+
+[node name="TextureRect" type="TextureRect" parent="Resources/HBoxContainer2/Time"]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("5_adthm")
-stretch_mode = 2
+size_flags_vertical = 6
+texture = ExtResource("3_owp4u")
+expand_mode = 1
 
-[node name="Water" type="Label" parent="Resources/VBoxContainer"]
+[node name="Label" type="Label" parent="Resources/HBoxContainer2/Time"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_88iga")
+theme_override_font_sizes/font_size = 45
+text = "60"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Resources/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="Potato" type="HBoxContainer" parent="Resources/HBoxContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Resources/HBoxContainer2/HBoxContainer/Potato"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = ExtResource("6_7o4wi")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Resources/HBoxContainer2/HBoxContainer/Potato"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_88iga")
+theme_override_font_sizes/font_size = 40
+text = "10"
+horizontal_alignment = 1
+
+[node name="Cattail" type="HBoxContainer" parent="Resources/HBoxContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Resources/HBoxContainer2/HBoxContainer/Cattail"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = ExtResource("7_74xcj")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Resources/HBoxContainer2/HBoxContainer/Cattail"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_88iga")
+theme_override_font_sizes/font_size = 40
+text = "10"
+horizontal_alignment = 1
+
+[node name="SpiderPlant" type="HBoxContainer" parent="Resources/HBoxContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Resources/HBoxContainer2/HBoxContainer/SpiderPlant"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = ExtResource("7_tw52s")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Resources/HBoxContainer2/HBoxContainer/SpiderPlant"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_88iga")
+theme_override_font_sizes/font_size = 40
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Water" type="HBoxContainer" parent="Resources/HBoxContainer2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Resources/HBoxContainer2/Water"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = ExtResource("5_adthm")
+expand_mode = 1
+
+[node name="Water" type="Label" parent="Resources/HBoxContainer2/Water"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_88iga")
 theme_override_font_sizes/font_size = 45
 text = "20/20"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Resources"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Resources"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -242.0
-offset_right = 242.0
-offset_bottom = 165.0
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -89.0
 grow_horizontal = 2
-theme_override_constants/separation = 50
+grow_vertical = 0
 
-[node name="Potato" type="VBoxContainer" parent="Resources/HBoxContainer"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="Resources/HBoxContainer/Potato"]
-layout_mode = 2
-texture = ExtResource("6_7o4wi")
-
-[node name="Label" type="Label" parent="Resources/HBoxContainer/Potato"]
+[node name="Label" type="Label" parent="Resources/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_88iga")
-theme_override_font_sizes/font_size = 30
-text = "10"
+theme_override_font_sizes/font_size = 40
+text = "Квота картошки: 100"
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Cattail" type="VBoxContainer" parent="Resources/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Resources/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 10
 
-[node name="TextureRect" type="TextureRect" parent="Resources/HBoxContainer/Cattail"]
+[node name="Qouta" type="ProgressBar" parent="Resources/VBoxContainer/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("7_74xcj")
-
-[node name="Label" type="Label" parent="Resources/HBoxContainer/Cattail"]
-layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("1_agjqw")
 theme_override_fonts/font = ExtResource("3_88iga")
-theme_override_font_sizes/font_size = 30
-text = "10"
-horizontal_alignment = 1
+theme_override_font_sizes/font_size = 35
 
-[node name="SpiderPlant" type="VBoxContainer" parent="Resources/HBoxContainer"]
-layout_mode = 2
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
 
-[node name="TextureRect" type="TextureRect" parent="Resources/HBoxContainer/SpiderPlant"]
-layout_mode = 2
-texture = ExtResource("7_tw52s")
-
-[node name="Label" type="Label" parent="Resources/HBoxContainer/SpiderPlant"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_88iga")
-theme_override_font_sizes/font_size = 30
-text = "10"
-horizontal_alignment = 1
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

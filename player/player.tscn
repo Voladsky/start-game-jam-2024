@@ -14,7 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://co72e1fprmbbl" path="res://assets/sounds/walk.wav" id="12_wflhj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_msb8d"]
-size = Vector2(337, 358)
+size = Vector2(245, 292)
 
 [sub_resource type="Animation" id="Animation_obokn"]
 resource_name = "Player_Idle"
@@ -1211,7 +1211,7 @@ y_sort_enabled = true
 script = ExtResource("1_vkip4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-10.5, 112)
+position = Vector2(-24.5, 139)
 shape = SubResource("RectangleShape2D_msb8d")
 
 [node name="GFX" type="Node2D" parent="."]

@@ -11,7 +11,12 @@ var spiderplant_amount = 0
 var max_water_amount = 20
 var water_amount = 0
 
-var quote_potato_amount = 30
+var max_quota_amount = 30
+var quota_amount = 0
+
+var max_qouta_time = 60
+var qouta_time = 0
+
 var can_suck = true
 
 func suck_water():
@@ -19,8 +24,8 @@ func suck_water():
 	get_tree().create_timer(0.2).timeout.connect(func(): can_suck = true)
 
 func change_quote_potato_amount(amount):
-	if quote_potato_amount + amount >= 0:
-		quote_potato_amount += amount
+	if quota_amount + amount >= 0:
+		quota_amount += amount
 		amount_changed.emit()
 		return true
 	else:
@@ -48,6 +53,7 @@ func change_cattail_amount(amount):
 func change_potato_amount(amount):
 	if potato_amount + amount >= 0:
 		potato_amount += amount
+		quota_amount = min(max_quota_amount, potato_amount)
 		amount_changed.emit()
 		return true
 	else:
