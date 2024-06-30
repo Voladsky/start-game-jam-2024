@@ -10,6 +10,7 @@ extends CanvasLayer
 @onready var qouta_label = $Resources/VBoxContainer/Label
 @onready var timer = $Timer
 
+@export var coef = 0.25
 
 func _ready():
 	GameManager.amount_changed.connect(change_text)
@@ -39,4 +40,13 @@ func change_text():
 
 
 func _on_timer_timeout():
-	pass
+	if GameManager.quota_amount < GameManager.max_quota_amount:
+		print("bruh")
+		return
+	
+	GameManager.potato_amount -= GameManager.max_quota_amount
+	
+	GameManager.max_qouta_time += GameManager.max_qouta_time*0.1
+	GameManager.max_qouta_amount *= 1.5
+
+	timer.start()
