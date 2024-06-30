@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://beu6eo5j5adkj" path="res://assets/sprites/Characters/GasMaskGuy/LegRight.png" id="8_rwsb2"]
 [ext_resource type="Texture2D" uid="uid://bl4x6vksjoxlw" path="res://assets/sprites/Characters/GasMaskGuy/LegLeft.png" id="9_5cnye"]
 [ext_resource type="Texture2D" uid="uid://ceqcntqjgqwft" path="res://assets/sprites/Characters/GasMaskGuy/Mouth.png" id="11_kb26p"]
-[ext_resource type="AudioStream" uid="uid://dde3f1uywryqy" path="res://assets/sounds/walk.wav" id="12_wflhj"]
+[ext_resource type="AudioStream" uid="uid://co72e1fprmbbl" path="res://assets/sounds/walk.wav" id="12_wflhj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_msb8d"]
 size = Vector2(337, 358)
