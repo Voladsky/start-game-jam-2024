@@ -10,6 +10,14 @@ var direction: Vector2 = Vector2.ZERO
 var is_moving = false
 var volume_step_down = -0.5
 
+var gameover = false
+var target
+
+
+func _ready():
+	target = get_tree().get_nodes_in_group("generator")[0]
+
+
 func _process(_delta):
 	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if(direction.length() > 0):
@@ -34,6 +42,12 @@ func _process(_delta):
 	$GFX/BackPack.modulate = Color(1,1,1,1) - Color(1,0.5,0,0) * GameManager.water_amount/GameManager.max_water_amount
 
 func _physics_process(_delta):
+	if gameover:
+		position += position.direction_to(target.position) * 25
+		if position.distance_to(target.position) < 25:
+			get_tree().get_nodes_in_group("panel")[0].visible = true
+			queue_free()
+
 	velocity = direction * speed
 	
 	move_and_slide()

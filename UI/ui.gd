@@ -10,9 +10,11 @@ extends CanvasLayer
 @onready var qouta_label = $Resources/VBoxContainer/Label
 @onready var timer = $Timer
 
-@export var coef = 0.25
+var sacrifice = preload("res://item_drop/sacrifice.tscn")
+var player 
 
 func _ready():
+	player = get_tree().get_nodes_in_group("player")[0]
 	GameManager.amount_changed.connect(change_text)
 	change_text()
 	qouta_bar.max_value = GameManager.max_quota_amount
@@ -41,8 +43,8 @@ func change_text():
 
 func _on_timer_timeout():
 	if GameManager.quota_amount < GameManager.max_quota_amount:
-		$Panel.visible = true
-		get_tree().get_nodes_in_group("player")[0].set_process(false)
+		get_tree().get_nodes_in_group("player")[0].gameover = true
+		get_tree().get_nodes_in_group("player")[0].get_node("CollisionShape2D").disabled = true
 		GameManager.reset()
 		return
 	
@@ -51,11 +53,18 @@ func _on_timer_timeout():
 	GameManager.max_qouta_time += GameManager.max_qouta_time*0.1
 	GameManager.max_quota_amount *= 1.5
 	
-	qouta_label.text = "Квота картошки: %s" % GameManager.max_quota_amount
+	qouta_label.text = "Норма картошки: %s" % GameManager.max_quota_amount
 	qouta_bar.max_value = GameManager.max_quota_amount
 	change_text()
 	
 	timer.start(GameManager.max_qouta_time)
+	
+	
+	for i in range(GameManager.max_quota_amount):
+		var sacrifice_instance = sacrifice.instantiate()
+		sacrifice_instance.position = player.position + Vector2(randf_range(-16, 16), randf_range(-16, 16))
+		get_tree().get_root().add_child(sacrifice_instance)
+		await get_tree().create_timer(0.1).timeout
 
 
 func _on_button_pressed():

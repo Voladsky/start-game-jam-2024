@@ -52,7 +52,7 @@ func _input_event(_viewport, _event, _shape_idx):
 			
 				for i in range(randi_range(1, 3)):
 					var item_instance = item_drop.instantiate()
-					get_tree().root.add_child(item_instance)
+					get_tree().get_root().get_node("World").add_child(item_instance)
 					item_instance.position = position + Vector2(randf_range(-32, 32), randf_range(-32, 32))
 
 
