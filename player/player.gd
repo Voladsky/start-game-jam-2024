@@ -5,13 +5,16 @@ extends CharacterBody2D
 @onready var GFX = $GFX
 @onready var walking_sound = $WalkingSound
 
+var rng = RandomNumberGenerator.new()
 var direction: Vector2 = Vector2.ZERO
 
 func _process(_delta):
 	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if(direction.length() > 0):
 		animation.play("Player_Walk")
+		
 		if !walking_sound.playing:
+			walking_sound.pitch_scale = rng.randf_range(1.5, 2)
 			walking_sound.play()
 		animation.speed_scale = 4
 		if(direction.x < 0):
