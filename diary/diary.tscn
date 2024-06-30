@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ceetuuf6wgqlj"]
+[gd_scene load_steps=11 format=3 uid="uid://ceetuuf6wgqlj"]
 
 [ext_resource type="Script" path="res://diary/diary.gd" id="1_ngsg2"]
 [ext_resource type="Texture2D" uid="uid://baslkx7t6j7oi" path="res://assets/sprites/Tilesets/Diary.png" id="1_tqu3h"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b7dmojxe163ep" path="res://assets/sprites/Tilesets/DiaryPotato.png" id="4_ll1y7"]
 [ext_resource type="Texture2D" uid="uid://4kpki7m6wsq" path="res://assets/sprites/Tilesets/DiaryCatTail.png" id="5_8raf3"]
 [ext_resource type="Texture2D" uid="uid://c2ssyja61ird3" path="res://assets/sprites/Tilesets/DiarySpiderPlant.png" id="6_2jfdi"]
+[ext_resource type="Texture2D" uid="uid://b7h6ma8e14mj" path="res://assets/sprites/Tilesets/DiaryTrash.png" id="7_5c70q"]
 [ext_resource type="AudioStream" uid="uid://8oxma73ielyu" path="res://assets/sounds/next_page.wav" id="7_aeryu"]
 [ext_resource type="Texture2D" uid="uid://dmyh760u250c3" path="res://assets/sprites/Tilesets/ArrowHover.png" id="8_qfrek"]
 
@@ -130,8 +131,8 @@ theme_override_colors/font_color = Color(0.392157, 0.235294, 0.0392157, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "Но картофеля нужно много. 
-Собирай картофель.
-Выполняй норму. "
+Собирайте картофель.
+Выполняйте норму. "
 vertical_alignment = 1
 
 [node name="ThirdPage" type="Control" parent="."]
@@ -174,8 +175,8 @@ text = "Рогоз - многолетнее травянистое растен�
 тистых регионах почти по всему миру.
 Согласно исследованиям, помогает
 избавить воду от лишней органики и
-насытить её фосфором. Если хочешь
-поливать грядки чистой водой, задумайся
+насытить её фосфором. Если хотите
+поливать грядки чистой водой, задумайтесь
 о выращивании рогоза. "
 vertical_alignment = 1
 
@@ -189,7 +190,7 @@ theme = ExtResource("2_sf2kg")
 theme_override_colors/font_color = Color(0.392157, 0.235294, 0.0392157, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-text = "Не пытайся съесть его соцветие.
+text = "Не пытайтесь съесть его соцветие.
 Оно невкусное.
 И взрывается."
 vertical_alignment = 1
@@ -234,8 +235,8 @@ text = "Хлорофитум - многолетнее
 травянистое растение.
 Согласно исследованиям НАСА,
 способен поглощать угарный газ и
-оксид азота.  Ты, конечно, не космонавт,
-но тебе понадобится бороться с ядом
+оксид азота.  Вы, конечно, не космонавт,
+но вам понадобится бороться с ядом
 в воздухе. Хлорофитум может с этим помочь.
 "
 vertical_alignment = 1
@@ -258,8 +259,69 @@ text = "А ещё хлорофитум похож на
 \"растение-паук\"."
 vertical_alignment = 1
 
-[node name="NextPage" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_aeryu")
+[node name="FifthPage" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BackGround" type="Sprite2D" parent="FifthPage"]
+texture = ExtResource("7_5c70q")
+
+[node name="Header" type="Label" parent="FifthPage"]
+layout_mode = 0
+offset_left = -330.0
+offset_top = -291.0
+offset_right = 159.0
+offset_bottom = -120.0
+theme = ExtResource("2_sf2kg")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0.392157, 0.235294, 0.0392157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "ЗАГРЯЗНЕНИЕ
+ОКРУЖАЮЩЕЙ СРЕДЫ"
+vertical_alignment = 1
+
+[node name="Desc" type="Label" parent="FifthPage"]
+layout_mode = 0
+offset_left = -330.0
+offset_top = -168.0
+offset_right = 291.0
+offset_bottom = 139.0
+theme = ExtResource("2_sf2kg")
+theme_override_colors/font_color = Color(0.392157, 0.235294, 0.0392157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Замусоривание окружающей среды - одна из 
+главных современных проблем
+человечества. Правда, учитывая вашу 
+ситуацию, уже не самая. Тем не
+менее, от мусора могут быть
+неприятности. Он затруднит вам
+проход, и физически, и,
+возможно, морально."
+vertical_alignment = 1
+
+[node name="Desc2" type="Label" parent="FifthPage"]
+layout_mode = 0
+offset_left = -319.0
+offset_top = 97.0
+offset_right = 302.0
+offset_bottom = 404.0
+theme = ExtResource("2_sf2kg")
+theme_override_colors/font_color = Color(0.392157, 0.235294, 0.0392157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Авторы энциклопедии
+призывают всех
+читателей сортировать
+мусор. Вы окажете безразмерную
+помощь экологии (или, в случае
+апокалипсиса, тому, что от неё
+осталось)."
+vertical_alignment = 1
 
 [node name="Buttons" type="Control" parent="."]
 layout_mode = 3
@@ -287,6 +349,9 @@ offset_bottom = -265.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_clwdy")
 texture_hover = ExtResource("8_qfrek")
+
+[node name="NextPage" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_aeryu")
 
 [connection signal="pressed" from="Buttons/Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Buttons/Right" to="." method="_on_right_pressed"]
