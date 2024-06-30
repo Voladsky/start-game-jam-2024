@@ -4,9 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b3o4wprfb2c0s" path="res://UI/ui_theme/icons.svg" id="2"]
 
 [sub_resource type="FontFile" id="21"]
-resource_name = ""
 fallbacks = Array[Font]([ExtResource("1")])
-fixed_size_scale_mode = 0
 cache/0/8/0/ascent = 0.0
 cache/0/8/0/descent = 0.0
 cache/0/8/0/underline_position = 0.0
