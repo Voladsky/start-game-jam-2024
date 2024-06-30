@@ -2,6 +2,7 @@ extends Node
 
 signal amount_changed
 signal cleaning_water(start)
+signal cleaning_field(start)
 
 var potato_amount = 10
 var cattail_amount = 0

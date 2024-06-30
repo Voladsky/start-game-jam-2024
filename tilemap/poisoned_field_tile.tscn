@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://dd8ulkopij3r8"]
+
+[ext_resource type="Script" path="res://tilemap/poisoned_field_tile.gd" id="1_jobg0"]
+[ext_resource type="Texture2D" uid="uid://d0m1asv67g1ke" path="res://assets/sprites/Tilesets/Ground.png" id="2_drn3a"]
+[ext_resource type="Texture2D" uid="uid://dt34vdnajx2ga" path="res://assets/sprites/Tilesets/Frame.png" id="3_gycbv"]
+[ext_resource type="Texture2D" uid="uid://6imnvd4xadnj" path="res://assets/sprites/Tilesets/PoisonCloud.png" id="4_c1byl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58mw5"]
+size = Vector2(64, 64)
+
+[sub_resource type="Gradient" id="Gradient_05e2j"]
+colors = PackedColorArray(1, 1, 1, 0.054902, 1, 1, 1, 1)
+
+[node name="FieldTile" type="Area2D"]
+script = ExtResource("1_jobg0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_58mw5")
+
+[node name="Field" type="Sprite2D" parent="."]
+texture = ExtResource("2_drn3a")
+
+[node name="Frame" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0, 1, 0.4, 1)
+position = Vector2(-1.90735e-06, -1.90735e-06)
+scale = Vector2(4, 4)
+texture = ExtResource("3_gycbv")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = 5
+lifetime = 5.0
+texture = ExtResource("4_c1byl")
+emission_shape = 3
+emission_rect_extents = Vector2(16, 16)
+gravity = Vector2(0, -5)
+scale_amount_min = 0.1
+color_ramp = SubResource("Gradient_05e2j")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
