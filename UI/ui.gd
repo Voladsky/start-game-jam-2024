@@ -72,5 +72,10 @@ func _on_button_pressed():
 
 
 func _on_diary_pressed():
+	if !$DiaryLayer/Diary.visible:
+		$DiaryLayer/OpenBook.play()
+	else:
+		$DiaryLayer/CloseBook.play()	
 	get_tree().paused = !get_tree().paused
 	$DiaryLayer/Diary.visible = !$DiaryLayer/Diary.visible
+	

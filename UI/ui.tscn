@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://t8a2ja5weun"]
+[gd_scene load_steps=15 format=3 uid="uid://t8a2ja5weun"]
 
 [ext_resource type="Theme" uid="uid://2hgjbonddwlt" path="res://UI/ui_theme/MinimalUI.tres" id="1_agjqw"]
 [ext_resource type="Script" path="res://UI/ui.gd" id="1_p3d7a"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bidcrjyikujbc" path="res://assets/sprites/Tilesets/SpiderPlantPickUp.png" id="7_tw52s"]
 [ext_resource type="Texture2D" uid="uid://bassfenbbb4mj" path="res://assets/sprites/Tilesets/Book.png" id="9_a2jf0"]
 [ext_resource type="PackedScene" uid="uid://ceetuuf6wgqlj" path="res://diary/diary.tscn" id="10_67e6o"]
+[ext_resource type="AudioStream" uid="uid://7e50vve32m1u" path="res://assets/sounds/open_book.wav" id="11_tykef"]
+[ext_resource type="AudioStream" uid="uid://c72v388xif2s7" path="res://assets/sounds/close_book.wav" id="12_4fnkv"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_ml6aw"]
 device = -1
@@ -203,6 +205,14 @@ layer = 2
 process_mode = 3
 visible = false
 scale = Vector2(0.7, 0.7)
+
+[node name="OpenBook" type="AudioStreamPlayer2D" parent="DiaryLayer"]
+process_mode = 3
+stream = ExtResource("11_tykef")
+
+[node name="CloseBook" type="AudioStreamPlayer2D" parent="DiaryLayer"]
+process_mode = 3
+stream = ExtResource("12_4fnkv")
 
 [node name="Panel" type="Panel" parent="." groups=["panel"]]
 visible = false
