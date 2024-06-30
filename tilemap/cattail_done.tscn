@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6t2gtha0y81"]
+[gd_scene load_steps=8 format=3 uid="uid://la8vn0q8286y"]
 
 [ext_resource type="Texture2D" uid="uid://co7aipchlhjmq" path="res://assets/sprites/Tilesets/CatTailSheet.png" id="1_t55ky"]
 [ext_resource type="Script" path="res://tilemap/cattail.gd" id="2_l2vgk"]
@@ -48,3 +48,4 @@ color_ramp = SubResource("Gradient_trark")
 [node name="Plant" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_4673k")
 volume_db = -80.0
+bus = &"Effects"

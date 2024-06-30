@@ -12,7 +12,7 @@ func _ready():
 		$FifthPage
 	]
 	current_page = 0
-	
+
 func _process(delta):
 	$Buttons/Left.visible = current_page != 0
 	$Buttons/Right.visible = current_page != 4
