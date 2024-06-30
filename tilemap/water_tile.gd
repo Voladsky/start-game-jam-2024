@@ -15,6 +15,7 @@ func _input_event(_viewport, _event, _shape_idx):
 	if Input.is_action_pressed("left_click"):
 		if (player.position - position).length() < 128:
 			if GameManager.water_amount + 1 <= GameManager.max_water_amount and can_suck:
+				$SuckSound.play()
 				GameManager.change_water_amount(1)
 				water_amount -= 1
 				$Label.text = str(water_amount)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cibudicojo330"]
+[gd_scene load_steps=18 format=3 uid="uid://cibudicojo330"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_vkip4"]
 [ext_resource type="Texture2D" uid="uid://ccvsvrgeu2skj" path="res://assets/sprites/Characters/GasMaskGuy/Body.png" id="2_6a4u0"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://beu6eo5j5adkj" path="res://assets/sprites/Characters/GasMaskGuy/LegRight.png" id="8_rwsb2"]
 [ext_resource type="Texture2D" uid="uid://bl4x6vksjoxlw" path="res://assets/sprites/Characters/GasMaskGuy/LegLeft.png" id="9_5cnye"]
 [ext_resource type="Texture2D" uid="uid://ceqcntqjgqwft" path="res://assets/sprites/Characters/GasMaskGuy/Mouth.png" id="11_kb26p"]
+[ext_resource type="AudioStream" uid="uid://dde3f1uywryqy" path="res://assets/sounds/walk.wav" id="12_wflhj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_msb8d"]
 size = Vector2(337, 358)
@@ -1259,3 +1260,7 @@ texture = ExtResource("11_kb26p")
 libraries = {
 "": SubResource("AnimationLibrary_phwkh")
 }
+
+[node name="WalkingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_wflhj")
+bus = &"Effects"
