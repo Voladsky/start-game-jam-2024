@@ -1,16 +1,26 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqopna5wms1rq"]
+[gd_scene load_steps=13 format=3 uid="uid://cqopna5wms1rq"]
 
 [ext_resource type="Script" path="res://tilemap/field_tile.gd" id="1_fx8tt"]
 [ext_resource type="Texture2D" uid="uid://dt34vdnajx2ga" path="res://assets/sprites/Tilesets/Frame.png" id="2_6wf7r"]
 [ext_resource type="Texture2D" uid="uid://d0m1asv67g1ke" path="res://assets/sprites/Tilesets/Ground.png" id="2_ctxa0"]
 [ext_resource type="Texture2D" uid="uid://pmn55hcb2rgd" path="res://assets/sprites/Tilesets/PotatoSheet.png" id="4_wu5pt"]
 [ext_resource type="Texture2D" uid="uid://bpgi31hb85uds" path="res://assets/sprites/Tilesets/WaterDrop.png" id="5_buqpx"]
+[ext_resource type="AudioStream" uid="uid://btyv0i1ttptc3" path="res://assets/sounds/plant.wav" id="6_grwjw"]
+[ext_resource type="AudioStream" uid="uid://rqdy481koyq0" path="res://assets/sounds/collect.wav" id="7_f4acf"]
+[ext_resource type="Texture2D" uid="uid://dpfb0hm65lj42" path="res://assets/sprites/Objects/BaseParticle.png" id="8_gmfcf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58mw5"]
 size = Vector2(64, 64)
 
 [sub_resource type="Gradient" id="Gradient_dm3ec"]
 colors = PackedColorArray(1, 1, 0.972549, 1, 1, 1, 1, 0.0313726)
+
+[sub_resource type="Curve" id="Curve_mdcq0"]
+_data = [Vector2(0, 0.747253), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Gradient" id="Gradient_5il0g"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="FieldTile" type="Area2D"]
 script = ExtResource("1_fx8tt")
@@ -58,8 +68,32 @@ scale_amount_max = 0.1
 color_ramp = SubResource("Gradient_dm3ec")
 
 [node name="PlantSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_grwjw")
 
 [node name="CollectSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_f4acf")
+
+[node name="GrowingParticle" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 15
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.5
+texture = ExtResource("8_gmfcf")
+emission_shape = 3
+emission_rect_extents = Vector2(20, 20)
+gravity = Vector2(0, 0)
+angular_velocity_min = 10.0
+angular_velocity_max = 90.0
+radial_accel_min = 30.0
+radial_accel_max = 50.0
+scale_amount_min = 0.1
+scale_amount_max = 0.1
+split_scale = true
+scale_curve_x = SubResource("Curve_mdcq0")
+scale_curve_y = null
+color = Color(0, 1, 0, 1)
+color_ramp = SubResource("Gradient_5il0g")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

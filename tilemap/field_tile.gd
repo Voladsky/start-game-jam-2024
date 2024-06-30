@@ -32,6 +32,7 @@ func _input_event(_viewport, _event, _shape_idx):
 					$WateringParticle.emitting = true
 					for i in range(2):
 						await get_tree().create_timer(2).timeout
+						$GrowingParticle.emitting = true
 						$Plant.frame += 1
 			else:
 				if GameManager.change_potato_amount(-1):
