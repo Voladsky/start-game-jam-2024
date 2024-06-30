@@ -352,6 +352,7 @@ texture_hover = ExtResource("8_qfrek")
 
 [node name="NextPage" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_aeryu")
+bus = &"Effects"
 
 [connection signal="pressed" from="Buttons/Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Buttons/Right" to="." method="_on_right_pressed"]

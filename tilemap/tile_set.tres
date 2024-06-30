@@ -1,14 +1,15 @@
-[gd_resource type="TileSet" load_steps=12 format=3 uid="uid://uv56e2m2n2id"]
+[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://uv56e2m2n2id"]
 
 [ext_resource type="PackedScene" uid="uid://cqopna5wms1rq" path="res://tilemap/field_tile.tscn" id="1_c6fil"]
 [ext_resource type="PackedScene" path="res://tilemap/cattail_done.tscn" id="2_54rd8"]
 [ext_resource type="PackedScene" uid="uid://bmj4vniao02jf" path="res://tilemap/water_tile.tscn" id="2_qon3y"]
+[ext_resource type="PackedScene" uid="uid://db8ws2fq4lbm7" path="res://tilemap/infinite_trash_tile.tscn" id="3_dglhv"]
 [ext_resource type="PackedScene" uid="uid://bxj3xyumiyhrb" path="res://tilemap/poisoned_water_tile.tscn" id="3_knmyr"]
 [ext_resource type="PackedScene" uid="uid://smcun11tc08a" path="res://tilemap/trash_tile.tscn" id="4_luv7q"]
 [ext_resource type="PackedScene" uid="uid://dd8ulkopij3r8" path="res://tilemap/poisoned_field_tile.tscn" id="5_8creh"]
 [ext_resource type="PackedScene" uid="uid://coctmf8kka7kg" path="res://tilemap/spiderplant.tscn" id="6_n6k56"]
-[ext_resource type="PackedScene" uid="uid://liunx44nuup6" path="res://tilemap/cattail.tscn" id="7_v61p2"]
-[ext_resource type="PackedScene" path="res://tilemap/done_potato.tscn" id="8_aem3e"]
+[ext_resource type="PackedScene" uid="uid://csp6jap8w3pu0" path="res://tilemap/cattail.tscn" id="7_v61p2"]
+[ext_resource type="PackedScene" uid="uid://b7baq6pnatv5u" path="res://tilemap/done_potato.tscn" id="8_aem3e"]
 [ext_resource type="PackedScene" path="res://tilemap/spiderplant_done.tscn" id="9_0empr"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_63yyk"]
@@ -22,6 +23,7 @@ scenes/7/scene = ExtResource("7_v61p2")
 scenes/8/scene = ExtResource("8_aem3e")
 scenes/9/scene = ExtResource("9_0empr")
 scenes/10/scene = ExtResource("2_54rd8")
+scenes/11/scene = ExtResource("3_dglhv")
 
 [resource]
 tile_size = Vector2i(64, 64)

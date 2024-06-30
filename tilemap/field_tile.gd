@@ -3,7 +3,7 @@ extends Area2D
 
 var item_drop = preload("res://item_drop/item_drop.tscn")
 
-var need_water = true
+@export var need_water = true
 var player
 
 

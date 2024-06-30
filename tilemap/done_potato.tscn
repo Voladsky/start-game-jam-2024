@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ctktpwyo1qyfm"]
+[gd_scene load_steps=14 format=3 uid="uid://b7baq6pnatv5u"]
 
 [ext_resource type="Script" path="res://tilemap/field_tile.gd" id="1_jtiav"]
 [ext_resource type="Texture2D" uid="uid://d0m1asv67g1ke" path="res://assets/sprites/Tilesets/Ground.png" id="2_hw38w"]
@@ -25,6 +25,7 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="FieldTile" type="Area2D"]
 script = ExtResource("1_jtiav")
+need_water = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_58mw5")

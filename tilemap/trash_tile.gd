@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-var trash_health = 10
+@export var trash_health = 10
 var player
 var can_dig = true
 var field_tile = preload("res://tilemap/field_tile.tscn")
