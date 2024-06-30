@@ -13,7 +13,7 @@ func _ready():
 
 func _input_event(_viewport, _event, _shape_idx):
 	if Input.is_action_pressed("left_click"):
-		if (player.position - position).length() < 128:
+		if $Frame.visible:
 			if $Plant.visible:
 				if need_water and GameManager.change_water_amount(-1):
 					need_water = false
@@ -29,7 +29,7 @@ func _input_event(_viewport, _event, _shape_idx):
 					need_water = true
 	
 	if Input.is_action_pressed("right_click"):
-		if (player.position - position).length() < 128:
+		if $Frame.visible:
 			if $Plant.frame == 2:
 				$CollectSound.play()
 				$Plant.visible = false

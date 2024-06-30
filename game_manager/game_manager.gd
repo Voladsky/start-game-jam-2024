@@ -10,6 +10,11 @@ var max_water_amount = 20
 var water_amount = 0
 
 var quote_potato_amount = 30
+var can_suck = true
+
+func suck_water():
+	can_suck = false
+	get_tree().create_timer(0.2).timeout.connect(func(): can_suck = true)
 
 func change_quote_potato_amount(amount):
 	if quote_potato_amount + amount >= 0:
