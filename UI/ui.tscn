@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://t8a2ja5weun"]
+[gd_scene load_steps=7 format=3 uid="uid://t8a2ja5weun"]
 
 [ext_resource type="Theme" uid="uid://2hgjbonddwlt" path="res://UI/ui_theme/MinimalUI.tres" id="1_agjqw"]
-[ext_resource type="Script" path="res://UI/resource_bar/resource_bar.gd" id="1_cmf0y"]
 [ext_resource type="Script" path="res://UI/ui.gd" id="1_p3d7a"]
 [ext_resource type="FontFile" uid="uid://dmxnw2ijq7o6v" path="res://assets/fonts/Zametka_Parletter.otf" id="3_88iga"]
-[ext_resource type="Texture2D" uid="uid://uyua7eopouah" path="res://assets/sprites/Objects/watering_can.png" id="4_0r7hg"]
+[ext_resource type="Texture2D" uid="uid://bpgi31hb85uds" path="res://assets/sprites/Tilesets/WaterDrop.png" id="5_adthm"]
+[ext_resource type="Texture2D" uid="uid://d2wdpwlghx3i2" path="res://assets/sprites/Tilesets/PotatoPickUp.png" id="6_7o4wi"]
+[ext_resource type="Texture2D" uid="uid://ci84hu4ihk43o" path="res://assets/sprites/Tilesets/CatTailPickUp.png" id="7_74xcj"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_p3d7a")
@@ -19,21 +20,6 @@ grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("1_agjqw")
 
-[node name="ResourceBar" type="Label" parent="Resources"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -117.0
-offset_right = 117.0
-offset_bottom = 23.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("3_88iga")
-theme_override_font_sizes/font_size = 35
-text = "Potatoes: 10  Cattails: 0 Spiderplants: 0 Quote: 30"
-horizontal_alignment = 1
-script = ExtResource("1_cmf0y")
-
 [node name="VBoxContainer" type="VBoxContainer" parent="Resources"]
 layout_mode = 1
 anchors_preset = 1
@@ -46,7 +32,7 @@ grow_horizontal = 0
 [node name="TextureRect" type="TextureRect" parent="Resources/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("4_0r7hg")
+texture = ExtResource("5_adthm")
 stretch_mode = 2
 
 [node name="Water" type="Label" parent="Resources/VBoxContainer"]
@@ -54,3 +40,57 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_88iga")
 theme_override_font_sizes/font_size = 45
 text = "20/20"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Resources"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -242.0
+offset_right = 242.0
+offset_bottom = 165.0
+grow_horizontal = 2
+theme_override_constants/separation = 50
+
+[node name="Potato" type="VBoxContainer" parent="Resources/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Resources/HBoxContainer/Potato"]
+layout_mode = 2
+texture = ExtResource("6_7o4wi")
+
+[node name="Label" type="Label" parent="Resources/HBoxContainer/Potato"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_88iga")
+theme_override_font_sizes/font_size = 30
+text = "10"
+horizontal_alignment = 1
+
+[node name="Cattail" type="VBoxContainer" parent="Resources/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Resources/HBoxContainer/Cattail"]
+layout_mode = 2
+texture = ExtResource("7_74xcj")
+
+[node name="Label" type="Label" parent="Resources/HBoxContainer/Cattail"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_88iga")
+theme_override_font_sizes/font_size = 30
+text = "10"
+horizontal_alignment = 1
+
+[node name="SpiderPlant" type="VBoxContainer" parent="Resources/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Resources/HBoxContainer/SpiderPlant"]
+layout_mode = 2
+texture = ExtResource("6_7o4wi")
+
+[node name="Label" type="Label" parent="Resources/HBoxContainer/SpiderPlant"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_88iga")
+theme_override_font_sizes/font_size = 30
+text = "10"
+horizontal_alignment = 1
