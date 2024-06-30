@@ -38,6 +38,7 @@ func _unhandled_input(_event):
 					immediate_replace()
 					GameManager.cleaning_water.disconnect(_on_cleaning)
 					GameManager.cleaning_water.emit(position)
+					queue_free()
 					
 func _on_mouse_entered():
 	if (player.position - position).length() < 128:
