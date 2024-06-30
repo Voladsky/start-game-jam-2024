@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cqopna5wms1rq" path="res://tilemap/field_tile.tscn" id="1_c6fil"]
 [ext_resource type="PackedScene" uid="uid://bmj4vniao02jf" path="res://tilemap/water_tile.tscn" id="2_qon3y"]
 [ext_resource type="PackedScene" uid="uid://bxj3xyumiyhrb" path="res://tilemap/poisoned_water_tile.tscn" id="3_knmyr"]
-[ext_resource type="PackedScene" uid="uid://smcun11tc08a" path="res://tilemap/trash_tile.tscn" id="4_luv7q"]
+[ext_resource type="PackedScene" path="res://tilemap/trash_tile.tscn" id="4_luv7q"]
 [ext_resource type="PackedScene" uid="uid://dd8ulkopij3r8" path="res://tilemap/poisoned_field_tile.tscn" id="5_8creh"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_63yyk"]

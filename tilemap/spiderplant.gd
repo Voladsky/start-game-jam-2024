@@ -20,7 +20,7 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	$Frame.visible = false
 	
-func _unhandled_input(event):
+func _unhandled_input(_event):
 	if Input.is_action_pressed("right_click"):
 		if $Frame.visible:
 			if $Sprite2D.frame == 2:

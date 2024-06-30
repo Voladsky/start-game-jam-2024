@@ -14,10 +14,28 @@ var water_amount = 0
 var max_quota_amount = 30
 var quota_amount = 0
 
-var max_qouta_time = 60
+var max_qouta_time = 10
 var qouta_time = 0
 
 var can_suck = true
+
+
+func reset():
+	potato_amount = 10
+	cattail_amount = 0
+	spiderplant_amount = 0
+	
+	max_water_amount = 20
+	water_amount = 0
+	
+	max_quota_amount = 30
+	quota_amount = 0
+	
+	max_qouta_time = 10
+	qouta_time = 0
+	
+	can_suck = true
+
 
 func suck_water():
 	can_suck = false

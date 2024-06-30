@@ -16,7 +16,7 @@ func _ready():
 	GameManager.amount_changed.connect(change_text)
 	change_text()
 	qouta_bar.max_value = GameManager.max_quota_amount
-	qouta_label.text = "Квота картошки: %s" % GameManager.max_quota_amount
+	qouta_label.text = "Норма картошки: %s" % GameManager.max_quota_amount
 	timer.start(GameManager.max_qouta_time)
 
 
@@ -35,18 +35,28 @@ func change_text():
 		GameManager.water_amount,
 		GameManager.max_water_amount
 		]
-
+	
 	qouta_bar.value = GameManager.potato_amount
 
 
 func _on_timer_timeout():
 	if GameManager.quota_amount < GameManager.max_quota_amount:
-		print("bruh")
+		$Panel.visible = true
+		get_tree().get_nodes_in_group("player")[0].set_process(false)
+		GameManager.reset()
 		return
 	
 	GameManager.potato_amount -= GameManager.max_quota_amount
 	
 	GameManager.max_qouta_time += GameManager.max_qouta_time*0.1
-	GameManager.max_qouta_amount *= 1.5
+	GameManager.max_quota_amount *= 1.5
+	
+	qouta_label.text = "Квота картошки: %s" % GameManager.max_quota_amount
+	qouta_bar.max_value = GameManager.max_quota_amount
+	change_text()
+	
+	timer.start(GameManager.max_qouta_time)
 
-	timer.start()
+
+func _on_button_pressed():
+	get_tree().change_scene_to_file("res://world/world.tscn")
