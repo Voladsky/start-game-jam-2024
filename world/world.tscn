@@ -10,7 +10,7 @@ y_sort_enabled = true
 
 [node name="UI" parent="." instance=ExtResource("6_4ig7x")]
 
-[node name="PlantGenerator" parent="." instance=ExtResource("3_ialrv")]
+[node name="PlantGenerator" parent="." groups=["generator"] instance=ExtResource("3_ialrv")]
 z_index = 1
 input_pickable = false
 

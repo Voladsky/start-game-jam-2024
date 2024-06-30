@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbgv7uxv2nss3"]
+
+[ext_resource type="Script" path="res://item_drop/sacrifice.gd" id="1_pkqfu"]
+[ext_resource type="Texture2D" uid="uid://d2wdpwlghx3i2" path="res://assets/sprites/Tilesets/PotatoPickUp.png" id="2_brsgh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8l3mc"]
+radius = 248.0
+
+[node name="Sacrifice" type="Area2D"]
+z_index = 1
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_pkqfu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8l3mc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_brsgh")

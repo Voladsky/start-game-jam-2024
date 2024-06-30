@@ -13,7 +13,6 @@ func _ready():
 		$GrowingParticle.emitting = true
 
 func _on_mouse_entered():
-	print("ratatatat")
 	if (player.position - position).length() < 128:
 		$Frame.visible = true
 
