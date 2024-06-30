@@ -6,6 +6,11 @@ var water_amount = max_water_amount
 var player
 var field_tile = preload("res://tilemap/field_tile.tscn")
 
+func grow_cattail():
+	$Plant.visible = true
+	for i in range(2):
+		await get_tree().create_timer(2).timeout
+		$Plant.frame += 1
 
 func _ready():
 	var rng = RandomNumberGenerator.new()

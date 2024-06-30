@@ -3,10 +3,19 @@ extends StaticBody2D
 var player
 var water_tile = preload("res://tilemap/water_tile.tscn")
 
+func immediate_replace():
+	var instance = water_tile.instantiate()
+	var cattail = preload("res://tilemap/cattail.tscn")
+	instance.add_child(cattail.instantiate())
+	get_tree().root.add_child(instance)
+	instance.position = position
+
 func replace_with_water():
+	var rng = RandomNumberGenerator.new()
+	await get_tree().create_timer(rng.randi() % 3).timeout
 	var instance = water_tile.instantiate()
 	get_tree().root.add_child(instance)
-	instance.position = position				
+	instance.position = position
 	queue_free()
 	
 func _ready():
@@ -23,9 +32,11 @@ func _ready():
 		
 func _unhandled_input(_event):
 	if Input.is_action_pressed("left_click"):
-		if $Frame.visible:			
+		if $Frame.visible:
 				if GameManager.change_cattail_amount(-1):
 					$PlantSound.play()
+					immediate_replace()
+					GameManager.cleaning_water.disconnect(_on_cleaning)
 					GameManager.cleaning_water.emit(position)
 					
 func _on_mouse_entered():
