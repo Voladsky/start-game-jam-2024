@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://t8a2ja5weun"]
+[gd_scene load_steps=6 format=3 uid="uid://t8a2ja5weun"]
 
 [ext_resource type="Theme" uid="uid://2hgjbonddwlt" path="res://UI/ui_theme/MinimalUI.tres" id="1_agjqw"]
 [ext_resource type="Script" path="res://UI/resource_bar/resource_bar.gd" id="1_cmf0y"]
 [ext_resource type="Script" path="res://UI/ui.gd" id="1_p3d7a"]
+[ext_resource type="FontFile" uid="uid://dmxnw2ijq7o6v" path="res://assets/fonts/Zametka_Parletter.otf" id="3_88iga"]
 [ext_resource type="Texture2D" uid="uid://uyua7eopouah" path="res://assets/sprites/Objects/watering_can.png" id="4_0r7hg"]
 
 [node name="UI" type="CanvasLayer"]
@@ -27,6 +28,7 @@ offset_left = -117.0
 offset_right = 117.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_88iga")
 theme_override_font_sizes/font_size = 35
 text = "Potatoes: 10  Cattails: 0 Spiderplants: 0 Quote: 30"
 horizontal_alignment = 1
@@ -49,5 +51,6 @@ stretch_mode = 2
 
 [node name="Water" type="Label" parent="Resources/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_88iga")
 theme_override_font_sizes/font_size = 45
 text = "20/20"
