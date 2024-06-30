@@ -19,7 +19,7 @@ func _ready():
 	$Field.texture = possible_textures[rng.randi() % 3]
 	$Field.flip_h = rng.randi() % 2
 	$Field.flip_v = rng.randi() % 2
-	$Field.rotation_degrees = possible_rotations[rng.randi() % 4]
+	#$Field.rotation_degrees = possible_rotations[rng.randi() % 4]
 
 
 func _input_event(_viewport, _event, _shape_idx):
