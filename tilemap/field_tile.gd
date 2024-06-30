@@ -28,14 +28,15 @@ func _input_event(_viewport, _event, _shape_idx):
 					need_water = true
 	
 	if Input.is_action_pressed("right_click"):
-		if $Plant.frame == 2:
-			$Plant.visible = false
-			$Plant.frame = 0
+		if (player.position - position).length() < 128:
+			if $Plant.frame == 2:
+				$Plant.visible = false
+				$Plant.frame = 0
 			
-			for i in range(randi_range(1, 3)):
-				var item_instance = item_drop.instantiate()
-				get_tree().root.add_child(item_instance)
-				item_instance.position = position + Vector2(randf_range(-32, 32), randf_range(-32, 32))
+				for i in range(randi_range(1, 3)):
+					var item_instance = item_drop.instantiate()
+					get_tree().root.add_child(item_instance)
+					item_instance.position = position + Vector2(randf_range(-32, 32), randf_range(-32, 32))
 
 
 func _on_mouse_entered():
