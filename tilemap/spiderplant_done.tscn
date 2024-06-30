@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cf23kmmha0iuw"]
+[gd_scene load_steps=10 format=3 uid="uid://bsgro7rhhfnuy"]
 
 [ext_resource type="Script" path="res://tilemap/spiderplant.gd" id="1_s0lm5"]
 [ext_resource type="Texture2D" uid="uid://dpfb0hm65lj42" path="res://assets/sprites/Objects/BaseParticle.png" id="2_pro8x"]
@@ -47,6 +47,7 @@ color_ramp = SubResource("Gradient_trark")
 
 [node name="Plant" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_nwa2e")
+bus = &"Effects"
 
 [node name="Field" type="Sprite2D" parent="."]
 texture = ExtResource("4_q12d4")

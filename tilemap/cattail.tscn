@@ -41,3 +41,4 @@ color_ramp = SubResource("Gradient_trark")
 
 [node name="Plant" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_37s5r")
+bus = &"Effects"

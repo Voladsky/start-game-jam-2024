@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bnwq5pogl3crd"]
+[gd_scene load_steps=8 format=3 uid="uid://la8vn0q8286y"]
 
 [ext_resource type="Script" path="res://tilemap/water_tile.gd" id="1_dejea"]
 [ext_resource type="Texture2D" uid="uid://co7aipchlhjmq" path="res://assets/sprites/Tilesets/CatTailSheet.png" id="1_t55ky"]
@@ -88,3 +88,7 @@ color_ramp = SubResource("Gradient_u2map")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[node name="Plant" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_4673k")
+volume_db = -80.0
+bus = &"Effects"
