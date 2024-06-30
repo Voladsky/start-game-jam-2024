@@ -49,10 +49,14 @@ func _unhandled_input(_event):
 		$SuckParticle.emitting = false
 
 func _on_mouse_entered():
+	if get_node_or_null("Rmb"):
+		$Rmb.visible = true
 	if (player.position - position).length() < 128:
 		$Label.visible = true
 		$Frame.visible = true
 
 func _on_mouse_exited():
+	if get_node_or_null("Rmb"):
+		$Rmb.visible = false
 	$Label.visible = false
 	$Frame.visible = false

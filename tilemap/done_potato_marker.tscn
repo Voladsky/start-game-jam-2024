@@ -1,14 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://b7baq6pnatv5u"]
+[gd_scene load_steps=15 format=3 uid="uid://ddbsqb8o8auhf"]
 
-[ext_resource type="Script" path="res://tilemap/field_tile.gd" id="1_jtiav"]
-[ext_resource type="Texture2D" uid="uid://d0m1asv67g1ke" path="res://assets/sprites/Tilesets/Ground.png" id="2_hw38w"]
-[ext_resource type="Texture2D" uid="uid://dt34vdnajx2ga" path="res://assets/sprites/Tilesets/Frame.png" id="3_yhpsx"]
-[ext_resource type="Texture2D" uid="uid://pmn55hcb2rgd" path="res://assets/sprites/Tilesets/PotatoSheet.png" id="4_by3ul"]
-[ext_resource type="Texture2D" uid="uid://bpgi31hb85uds" path="res://assets/sprites/Tilesets/WaterDrop.png" id="5_6xqw4"]
-[ext_resource type="AudioStream" uid="uid://btyv0i1ttptc3" path="res://assets/sounds/plant.wav" id="6_yutbn"]
-[ext_resource type="AudioStream" uid="uid://rqdy481koyq0" path="res://assets/sounds/collect.wav" id="7_ckb6b"]
-[ext_resource type="Texture2D" uid="uid://dpfb0hm65lj42" path="res://assets/sprites/Objects/BaseParticle.png" id="8_ygymp"]
-[ext_resource type="AudioStream" uid="uid://bomp2ijrautep" path="res://assets/sounds/water.wav" id="9_15yoi"]
+[ext_resource type="Script" path="res://tilemap/field_tile.gd" id="1_31s50"]
+[ext_resource type="Texture2D" uid="uid://d0m1asv67g1ke" path="res://assets/sprites/Tilesets/Ground.png" id="2_1v2x2"]
+[ext_resource type="Texture2D" uid="uid://dt34vdnajx2ga" path="res://assets/sprites/Tilesets/Frame.png" id="3_ofvby"]
+[ext_resource type="Texture2D" uid="uid://pmn55hcb2rgd" path="res://assets/sprites/Tilesets/PotatoSheet.png" id="4_yhwhh"]
+[ext_resource type="Texture2D" uid="uid://bpgi31hb85uds" path="res://assets/sprites/Tilesets/WaterDrop.png" id="5_k3t00"]
+[ext_resource type="AudioStream" uid="uid://btyv0i1ttptc3" path="res://assets/sounds/plant.wav" id="6_urksq"]
+[ext_resource type="AudioStream" uid="uid://rqdy481koyq0" path="res://assets/sounds/collect.wav" id="7_7hiud"]
+[ext_resource type="Texture2D" uid="uid://dpfb0hm65lj42" path="res://assets/sprites/Objects/BaseParticle.png" id="8_mkrqk"]
+[ext_resource type="AudioStream" uid="uid://bomp2ijrautep" path="res://assets/sounds/water.wav" id="9_h8t6t"]
+[ext_resource type="Texture2D" uid="uid://3h1x8mfgkk76" path="res://assets/sprites/Tilesets/RMB.png" id="10_vndw6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58mw5"]
 size = Vector2(64, 64)
@@ -24,31 +25,31 @@ point_count = 1
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="FieldTile" type="Area2D"]
-script = ExtResource("1_jtiav")
+script = ExtResource("1_31s50")
 need_water = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_58mw5")
 
 [node name="Field" type="Sprite2D" parent="."]
-texture = ExtResource("2_hw38w")
+texture = ExtResource("2_1v2x2")
 
 [node name="Frame" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(0, 1, 0.4, 1)
 position = Vector2(-1.90735e-06, -1.90735e-06)
 scale = Vector2(4, 4)
-texture = ExtResource("3_yhpsx")
+texture = ExtResource("3_ofvby")
 
 [node name="Plant" type="Sprite2D" parent="."]
-texture = ExtResource("4_by3ul")
+texture = ExtResource("4_yhwhh")
 hframes = 3
 frame = 2
 
 [node name="Water" type="Sprite2D" parent="."]
 visible = false
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("5_6xqw4")
+texture = ExtResource("5_k3t00")
 
 [node name="WateringParticle" type="CPUParticles2D" parent="."]
 position = Vector2(0, -25)
@@ -57,7 +58,7 @@ amount = 15
 lifetime = 0.5
 one_shot = true
 explosiveness = 0.3
-texture = ExtResource("5_6xqw4")
+texture = ExtResource("5_k3t00")
 emission_shape = 3
 emission_rect_extents = Vector2(16, 16)
 spread = 180.0
@@ -69,13 +70,11 @@ scale_amount_min = 0.05
 scale_amount_max = 0.1
 color_ramp = SubResource("Gradient_dm3ec")
 
-[node name="PlantSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_yutbn")
-bus = &"Effects"
+[node name="PlantSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_urksq")
 
-[node name="CollectSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_ckb6b")
-bus = &"Effects"
+[node name="CollectSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_7hiud")
 
 [node name="GrowingParticle" type="CPUParticles2D" parent="."]
 emitting = false
@@ -83,7 +82,7 @@ amount = 15
 lifetime = 0.5
 one_shot = true
 explosiveness = 0.5
-texture = ExtResource("8_ygymp")
+texture = ExtResource("8_mkrqk")
 emission_shape = 3
 emission_rect_extents = Vector2(20, 20)
 gravity = Vector2(0, 0)
@@ -105,7 +104,7 @@ amount = 15
 lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
-texture = ExtResource("8_ygymp")
+texture = ExtResource("8_mkrqk")
 emission_shape = 3
 emission_rect_extents = Vector2(20, 20)
 spread = 180.0
@@ -123,8 +122,14 @@ color = Color(1, 0.831373, 0.313726, 1)
 color_ramp = SubResource("Gradient_5il0g")
 
 [node name="WaterSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_15yoi")
-bus = &"Effects"
+stream = ExtResource("9_h8t6t")
+
+[node name="Rmb" type="Sprite2D" parent="."]
+visible = false
+z_index = 6
+position = Vector2(0, -53)
+scale = Vector2(0.546875, 0.546875)
+texture = ExtResource("10_vndw6")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

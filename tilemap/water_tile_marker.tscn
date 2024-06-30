@@ -1,0 +1,93 @@
+[gd_scene load_steps=11 format=3 uid="uid://c862fepn053be"]
+
+[ext_resource type="Script" path="res://tilemap/water_tile.gd" id="1_42r1g"]
+[ext_resource type="Texture2D" uid="uid://btcsemdcx6dr8" path="res://assets/sprites/Tilesets/WaterTile.png" id="2_6hml6"]
+[ext_resource type="Texture2D" uid="uid://dt34vdnajx2ga" path="res://assets/sprites/Tilesets/Frame.png" id="3_vgllp"]
+[ext_resource type="Theme" uid="uid://2hgjbonddwlt" path="res://UI/ui_theme/MinimalUI.tres" id="4_0el4m"]
+[ext_resource type="FontFile" uid="uid://dmxnw2ijq7o6v" path="res://assets/fonts/Zametka_Parletter.otf" id="5_2eavq"]
+[ext_resource type="AudioStream" uid="uid://nc7udlrgdur6" path="res://assets/sounds/water_suck.wav" id="6_50dfq"]
+[ext_resource type="Texture2D" uid="uid://bpgi31hb85uds" path="res://assets/sprites/Tilesets/WaterDrop.png" id="7_y0mc8"]
+[ext_resource type="Texture2D" uid="uid://3h1x8mfgkk76" path="res://assets/sprites/Tilesets/RMB.png" id="8_3lx72"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7e8t7"]
+size = Vector2(64, 64)
+
+[sub_resource type="Gradient" id="Gradient_u2map"]
+colors = PackedColorArray(1, 1, 1, 0.976471, 1, 1, 1, 0)
+
+[node name="Water" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_42r1g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7e8t7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6hml6")
+
+[node name="Frame" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0, 1, 0.4, 1)
+position = Vector2(-1.90735e-06, -1.90735e-06)
+scale = Vector2(4, 4)
+texture = ExtResource("3_vgllp")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -17.5
+offset_right = 14.0
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_0el4m")
+theme_override_fonts/font = ExtResource("5_2eavq")
+theme_override_font_sizes/font_size = 35
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SuckSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_50dfq")
+bus = &"Effects"
+
+[node name="SuckParticle" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 12
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("7_y0mc8")
+emission_shape = 3
+emission_rect_extents = Vector2(10, 10)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 45.0
+initial_velocity_max = 70.0
+orbit_velocity_min = 0.1
+orbit_velocity_max = 0.2
+linear_accel_min = 10.0
+linear_accel_max = 100.0
+damping_min = 10.0
+damping_max = 10.0
+angle_min = -30.0
+angle_max = 30.0
+scale_amount_min = 0.05
+scale_amount_max = 0.1
+color_ramp = SubResource("Gradient_u2map")
+
+[node name="Rmb" type="Sprite2D" parent="."]
+visible = false
+z_index = 5
+position = Vector2(0, -44)
+scale = Vector2(0.359375, 0.359375)
+texture = ExtResource("8_3lx72")
+flip_h = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

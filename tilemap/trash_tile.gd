@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-var trash_health = 10
+@export var trash_health = 10
 var player
 var can_dig = true
 var field_tile = preload("res://tilemap/field_tile.tscn")
@@ -38,10 +38,14 @@ func _on_timer_timeout():
 	can_dig = true
 
 func _on_mouse_entered():
+	if get_node_or_null("Rmb"):
+		$Rmb.visible = true
 	if (player.position - position).length() < 128:
 		$Label.visible = true
 		$Frame.visible = true
 
 func _on_mouse_exited():
+	if get_node_or_null("Rmb"):
+		$Rmb.visible = false
 	$Label.visible = false
 	$Frame.visible = false

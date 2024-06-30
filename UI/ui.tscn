@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://t8a2ja5weun"]
+[gd_scene load_steps=16 format=3 uid="uid://t8a2ja5weun"]
 
 [ext_resource type="Theme" uid="uid://2hgjbonddwlt" path="res://UI/ui_theme/MinimalUI.tres" id="1_agjqw"]
 [ext_resource type="Script" path="res://UI/ui.gd" id="1_p3d7a"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ci84hu4ihk43o" path="res://assets/sprites/Tilesets/CatTailPickUp.png" id="7_74xcj"]
 [ext_resource type="Texture2D" uid="uid://bidcrjyikujbc" path="res://assets/sprites/Tilesets/SpiderPlantPickUp.png" id="7_tw52s"]
 [ext_resource type="Texture2D" uid="uid://bassfenbbb4mj" path="res://assets/sprites/Tilesets/Book.png" id="9_a2jf0"]
+[ext_resource type="Texture2D" uid="uid://b15d0baa0adx2" path="res://assets/sprites/Tilesets/Exit.png" id="10_8d0ed"]
 [ext_resource type="PackedScene" uid="uid://ceetuuf6wgqlj" path="res://diary/diary.tscn" id="10_67e6o"]
 [ext_resource type="AudioStream" uid="uid://7e50vve32m1u" path="res://assets/sounds/open_book.wav" id="11_tykef"]
 [ext_resource type="AudioStream" uid="uid://c72v388xif2s7" path="res://assets/sounds/close_book.wav" id="12_4fnkv"]
@@ -194,6 +195,14 @@ mouse_default_cursor_shape = 2
 shortcut = SubResource("Shortcut_r1607")
 texture_normal = ExtResource("9_a2jf0")
 
+[node name="GoToMenu" type="TextureButton" parent="Resources"]
+offset_left = 1082.0
+offset_top = 212.0
+offset_right = 1146.0
+offset_bottom = 276.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("10_8d0ed")
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 60.0
 one_shot = true
@@ -209,10 +218,12 @@ scale = Vector2(0.7, 0.7)
 [node name="OpenBook" type="AudioStreamPlayer2D" parent="DiaryLayer"]
 process_mode = 3
 stream = ExtResource("11_tykef")
+bus = &"Effects"
 
 [node name="CloseBook" type="AudioStreamPlayer2D" parent="DiaryLayer"]
 process_mode = 3
 stream = ExtResource("12_4fnkv")
+bus = &"Effects"
 
 [node name="Panel" type="Panel" parent="." groups=["panel"]]
 visible = false
@@ -252,5 +263,6 @@ theme_override_font_sizes/font_size = 50
 text = "начать заново"
 
 [connection signal="pressed" from="Resources/Diary2" to="." method="_on_diary_pressed"]
+[connection signal="pressed" from="Resources/GoToMenu" to="." method="_on_go_to_menu_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_button_pressed"]

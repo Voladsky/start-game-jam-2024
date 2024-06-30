@@ -3,7 +3,7 @@ extends Area2D
 
 var item_drop = preload("res://item_drop/item_drop.tscn")
 
-var need_water = true
+@export var need_water = true
 var player
 
 
@@ -56,9 +56,13 @@ func _input_event(_viewport, _event, _shape_idx):
 
 
 func _on_mouse_entered():
+	if get_node_or_null("Rmb"):
+		$Rmb.visible = true
 	if (player.position - position).length() < 128:
 		$Frame.visible = true
 
 
 func _on_mouse_exited():
+	if get_node_or_null("Rmb"):
+		$Rmb.visible = false
 	$Frame.visible = false
