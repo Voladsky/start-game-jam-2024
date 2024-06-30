@@ -25,6 +25,7 @@ func _unhandled_input(_event):
 		if $Frame.visible:			
 			if GameManager.water_amount + 1 <= GameManager.max_water_amount and GameManager.can_suck:
 				$SuckSound.play()
+				$SuckParticle.emitting = true
 				GameManager.change_water_amount(1)
 				water_amount -= 1
 				$Label.text = str(water_amount)
