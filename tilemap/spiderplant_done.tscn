@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://cf23kmmha0iuw"]
+
+[ext_resource type="Script" path="res://tilemap/spiderplant.gd" id="1_s0lm5"]
+[ext_resource type="Texture2D" uid="uid://dpfb0hm65lj42" path="res://assets/sprites/Objects/BaseParticle.png" id="2_pro8x"]
+[ext_resource type="AudioStream" uid="uid://d2woawvuy05gj" path="res://assets/sounds/plant_water.wav" id="3_nwa2e"]
+[ext_resource type="Texture2D" uid="uid://d0m1asv67g1ke" path="res://assets/sprites/Tilesets/Ground.png" id="4_q12d4"]
+[ext_resource type="Texture2D" uid="uid://dt34vdnajx2ga" path="res://assets/sprites/Tilesets/Frame.png" id="5_uot6t"]
+[ext_resource type="Texture2D" uid="uid://dcy70l4d8tnvx" path="res://assets/sprites/Tilesets/SpiderPlantSheet.png" id="6_hqv4c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rb5gc"]
+size = Vector2(64, 64)
+
+[sub_resource type="Curve" id="Curve_uc7rq"]
+_data = [Vector2(0, 0.747253), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Gradient" id="Gradient_trark"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="Spiderplant" type="Area2D"]
+script = ExtResource("1_s0lm5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rb5gc")
+
+[node name="GrowingParticle" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 15
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.5
+texture = ExtResource("2_pro8x")
+emission_shape = 3
+emission_rect_extents = Vector2(20, 20)
+gravity = Vector2(0, 0)
+angular_velocity_min = 10.0
+angular_velocity_max = 90.0
+radial_accel_min = 30.0
+radial_accel_max = 50.0
+scale_amount_min = 0.1
+scale_amount_max = 0.1
+split_scale = true
+scale_curve_x = SubResource("Curve_uc7rq")
+scale_curve_y = null
+color = Color(0, 1, 0, 1)
+color_ramp = SubResource("Gradient_trark")
+
+[node name="Plant" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_nwa2e")
+
+[node name="Field" type="Sprite2D" parent="."]
+texture = ExtResource("4_q12d4")
+
+[node name="Frame" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0, 1, 0.4, 1)
+position = Vector2(-1.90735e-06, -1.90735e-06)
+scale = Vector2(4, 4)
+texture = ExtResource("5_uot6t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("6_hqv4c")
+hframes = 3
+frame = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

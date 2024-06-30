@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://b6t2gtha0y81"]
+
+[ext_resource type="Texture2D" uid="uid://co7aipchlhjmq" path="res://assets/sprites/Tilesets/CatTailSheet.png" id="1_t55ky"]
+[ext_resource type="Script" path="res://tilemap/cattail.gd" id="2_l2vgk"]
+[ext_resource type="Texture2D" uid="uid://dpfb0hm65lj42" path="res://assets/sprites/Objects/BaseParticle.png" id="3_8rwvm"]
+[ext_resource type="Texture2D" uid="uid://btcsemdcx6dr8" path="res://assets/sprites/Tilesets/WaterTile.png" id="3_u7358"]
+[ext_resource type="AudioStream" uid="uid://d2woawvuy05gj" path="res://assets/sounds/plant_water.wav" id="4_4673k"]
+
+[sub_resource type="Curve" id="Curve_uc7rq"]
+_data = [Vector2(0, 0.747253), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Gradient" id="Gradient_trark"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="Cattail" type="Sprite2D"]
+texture = ExtResource("1_t55ky")
+hframes = 3
+frame = 2
+script = ExtResource("2_l2vgk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("3_u7358")
+
+[node name="GrowingParticle" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 15
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.5
+texture = ExtResource("3_8rwvm")
+emission_shape = 3
+emission_rect_extents = Vector2(20, 20)
+gravity = Vector2(0, 0)
+angular_velocity_min = 10.0
+angular_velocity_max = 90.0
+radial_accel_min = 30.0
+radial_accel_max = 50.0
+scale_amount_min = 0.1
+scale_amount_max = 0.1
+split_scale = true
+scale_curve_x = SubResource("Curve_uc7rq")
+scale_curve_y = null
+color = Color(0, 1, 0, 1)
+color_ramp = SubResource("Gradient_trark")
+
+[node name="Plant" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_4673k")
+volume_db = -80.0
