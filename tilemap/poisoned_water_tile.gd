@@ -18,6 +18,8 @@ func _ready():
 		preload("res://assets/sprites/Tilesets/DirtyWater2.png")
 	]
 	$Sprite2D.texture = possible_textures[rng.randi() % 2]
+	$Sprite2D.flip_h = rng.randi() % 2
+	$Sprite2D.flip_v = rng.randi() % 2
 		
 func _unhandled_input(_event):
 	if Input.is_action_pressed("left_click"):

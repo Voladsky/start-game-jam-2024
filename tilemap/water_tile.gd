@@ -8,8 +8,11 @@ var field_tile = preload("res://tilemap/field_tile.tscn")
 
 
 func _ready():
+	var rng = RandomNumberGenerator.new()
 	player = get_tree().get_nodes_in_group("player")[0]
 	$Label.text = str(water_amount)
+	$Sprite2D.flip_h = rng.randi() % 2
+	$Sprite2D.flip_v = rng.randi() % 2
 
 
 func _unhandled_input(_event):

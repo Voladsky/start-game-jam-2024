@@ -8,7 +8,10 @@ var player
 
 
 func _ready():
+	var rng = RandomNumberGenerator.new()
 	player = get_tree().get_nodes_in_group("player")[0]
+	$Field.flip_h = rng.randi() % 2
+	$Field.flip_v = rng.randi() % 2
 
 
 func _input_event(_viewport, _event, _shape_idx):
