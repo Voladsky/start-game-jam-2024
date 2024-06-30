@@ -19,12 +19,14 @@ func _process(delta):
 
 
 func _on_right_pressed():
+	$NextPage.play()
 	control_list[current_page].visible = false
 	current_page += 1
 	control_list[current_page].visible = true
 
 
 func _on_left_pressed():
+	$NextPage.play()
 	control_list[current_page].visible = false
 	current_page -= 1
 	control_list[current_page].visible = true

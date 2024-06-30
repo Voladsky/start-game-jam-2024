@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ceetuuf6wgqlj"]
+[gd_scene load_steps=10 format=3 uid="uid://ceetuuf6wgqlj"]
 
 [ext_resource type="Script" path="res://diary/diary.gd" id="1_ngsg2"]
 [ext_resource type="Texture2D" uid="uid://baslkx7t6j7oi" path="res://assets/sprites/Tilesets/Diary.png" id="1_tqu3h"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b7dmojxe163ep" path="res://assets/sprites/Tilesets/DiaryPotato.png" id="4_ll1y7"]
 [ext_resource type="Texture2D" uid="uid://4kpki7m6wsq" path="res://assets/sprites/Tilesets/DiaryCatTail.png" id="5_8raf3"]
 [ext_resource type="Texture2D" uid="uid://c2ssyja61ird3" path="res://assets/sprites/Tilesets/DiarySpiderPlant.png" id="6_2jfdi"]
+[ext_resource type="AudioStream" uid="uid://8oxma73ielyu" path="res://assets/sounds/next_page.wav" id="7_aeryu"]
 [ext_resource type="Texture2D" uid="uid://dmyh760u250c3" path="res://assets/sprites/Tilesets/ArrowHover.png" id="8_qfrek"]
 
 [node name="Diary" type="Panel"]
@@ -256,6 +257,9 @@ text = "А ещё хлорофитум похож на
 Тем не менее, его называют 
 \"растение-паук\"."
 vertical_alignment = 1
+
+[node name="NextPage" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_aeryu")
 
 [node name="Buttons" type="Control" parent="."]
 layout_mode = 3
