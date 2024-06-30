@@ -1,10 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxj3xyumiyhrb"]
+[gd_scene load_steps=6 format=3 uid="uid://bxj3xyumiyhrb"]
 
 [ext_resource type="Script" path="res://tilemap/poisoned_water_tile.gd" id="1_ojis2"]
 [ext_resource type="Texture2D" uid="uid://btcsemdcx6dr8" path="res://assets/sprites/Tilesets/WaterTile.png" id="2_xhc87"]
 [ext_resource type="Texture2D" uid="uid://dt34vdnajx2ga" path="res://assets/sprites/Tilesets/Frame.png" id="3_4tsju"]
-[ext_resource type="AudioStream" uid="uid://nc7udlrgdur6" path="res://assets/sounds/water_suck.wav" id="5_5mrwk"]
-[ext_resource type="Texture2D" uid="uid://uyua7eopouah" path="res://assets/sprites/Objects/watering_can.png" id="6_wdf3n"]
 [ext_resource type="AudioStream" uid="uid://btyv0i1ttptc3" path="res://assets/sounds/plant.wav" id="7_7ms8m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7e8t7"]
@@ -26,14 +24,6 @@ modulate = Color(0, 1, 0.4, 1)
 position = Vector2(-1.90735e-06, -1.90735e-06)
 scale = Vector2(4, 4)
 texture = ExtResource("3_4tsju")
-
-[node name="SuckSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_5mrwk")
-bus = &"Effects"
-
-[node name="WateringCan" type="Sprite2D" parent="."]
-scale = Vector2(4, 4)
-texture = ExtResource("6_wdf3n")
 
 [node name="PlantSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_7ms8m")

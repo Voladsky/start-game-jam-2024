@@ -4,8 +4,14 @@ var player
 var water_tile = preload("res://tilemap/water_tile.tscn")
 
 func _ready():
+	var rng = RandomNumberGenerator.new()
 	player = get_tree().get_nodes_in_group("player")[0]
-
+	var possible_textures = [
+		preload("res://assets/sprites/Tilesets/DirtyWater1.png"),
+		preload("res://assets/sprites/Tilesets/DirtyWater2.png")
+	]
+	$Sprite2D.texture = possible_textures[rng.randi() % 2]
+		
 func _unhandled_input(_event):
 	if Input.is_action_pressed("left_click"):
 		if $Frame.visible:			
