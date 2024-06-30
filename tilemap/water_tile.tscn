@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmj4vniao02jf"]
+[gd_scene load_steps=10 format=3 uid="uid://bmj4vniao02jf"]
 
 [ext_resource type="Script" path="res://tilemap/water_tile.gd" id="1_ji8ol"]
 [ext_resource type="Texture2D" uid="uid://btcsemdcx6dr8" path="res://assets/sprites/Tilesets/WaterTile.png" id="2_tq3x6"]
 [ext_resource type="Texture2D" uid="uid://dt34vdnajx2ga" path="res://assets/sprites/Tilesets/Frame.png" id="3_skli0"]
 [ext_resource type="Theme" uid="uid://2hgjbonddwlt" path="res://UI/ui_theme/MinimalUI.tres" id="4_1dexd"]
 [ext_resource type="AudioStream" uid="uid://nc7udlrgdur6" path="res://assets/sounds/water_suck.wav" id="5_07na4"]
+[ext_resource type="FontFile" uid="uid://dmxnw2ijq7o6v" path="res://assets/fonts/Zametka_Parletter.otf" id="5_rrjx7"]
 [ext_resource type="Texture2D" uid="uid://bpgi31hb85uds" path="res://assets/sprites/Tilesets/WaterDrop.png" id="6_s2q1o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7e8t7"]
@@ -44,7 +45,8 @@ offset_bottom = 17.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_1dexd")
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("5_rrjx7")
+theme_override_font_sizes/font_size = 35
 text = "20"
 horizontal_alignment = 1
 vertical_alignment = 1

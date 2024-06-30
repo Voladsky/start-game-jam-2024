@@ -10,12 +10,23 @@ func _ready():
 	cattail_cost_label.text = "%s к" % cattail_cost
 	spiderplant_cost_label.text = "%s к" % spiderplant_cost
 
+func _process(_delta):
+	if has_overlapping_bodies():
+		if Input.is_action_just_pressed("interact"):
+			if $UI.visible:
+				$UI.visible = false
+				$E.visible = true
+			else:
+				$UI.visible = true
+				$E.visible = false
+
 
 func _on_body_entered(_body):
-	$UI.visible = true
+	$E.visible = true
 
 
 func _on_body_exited(_body):
+	$E.visible = false
 	$UI.visible = false
 
 

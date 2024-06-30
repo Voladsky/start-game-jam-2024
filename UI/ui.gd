@@ -50,8 +50,8 @@ func _on_timer_timeout():
 	
 	GameManager.potato_amount -= GameManager.max_quota_amount
 	
-	GameManager.max_qouta_time += GameManager.max_qouta_time*0.1
-	GameManager.max_quota_amount *= 1.5
+	GameManager.max_qouta_time += int(GameManager.max_qouta_time*0.1)
+	GameManager.max_quota_amount = int(GameManager.max_quota_amount*1.5)
 	
 	qouta_label.text = "Норма картошки: %s" % GameManager.max_quota_amount
 	qouta_bar.max_value = GameManager.max_quota_amount
@@ -59,12 +59,15 @@ func _on_timer_timeout():
 	
 	timer.start(GameManager.max_qouta_time)
 	
+	var potatos = GameManager.max_quota_amount
 	
-	for i in range(GameManager.max_quota_amount):
-		var sacrifice_instance = sacrifice.instantiate()
-		sacrifice_instance.position = player.position + Vector2(randf_range(-16, 16), randf_range(-16, 16))
-		get_tree().get_root().add_child(sacrifice_instance)
-		await get_tree().create_timer(0.1).timeout
+	while potatos > 0:
+		for i in range(randi_range(1, 4)):
+			potatos -= 1
+			var sacrifice_instance = sacrifice.instantiate()
+			sacrifice_instance.position = player.position + Vector2(randf_range(-32, 32), randf_range(-32, 32))
+			get_tree().get_root().add_child(sacrifice_instance)
+		await get_tree().create_timer(0.04).timeout
 
 
 func _on_button_pressed():
