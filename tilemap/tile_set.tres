@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bmj4vniao02jf" path="res://tilemap/water_tile.tscn" id="2_qon3y"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_63yyk"]
+scenes/1/scene = ExtResource("2_qon3y")
 scenes/2/scene = ExtResource("1_c6fil")
-scenes/3/scene = ExtResource("2_qon3y")
 
 [resource]
 tile_size = Vector2i(64, 64)
